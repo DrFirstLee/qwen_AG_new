@@ -27,3 +27,15 @@ gdown 1OEz25-u1uqKfeuyCqy7hmiOv7lIWfigk
 
 # 데이터 압축 해제
 unzip AGD20K.zip
+
+
+# 깃허브 레포 클론
+git clone https://github.com/DrFirstLee/qwen_AG_new.git
+
+# qwen25 환경 생성
+cd qwen_AG_new
+conda env create -f qwen25.yaml -n qwen25
+
+# 생성된 환경 활성화 안내
+echo ">>> qwen25 환경 생성 완료. 다음 명령으로 활성화하세요:"
+echo "conda activate qwen25"
