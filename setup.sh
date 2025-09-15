@@ -13,6 +13,8 @@ ANACONDA_SH=Anaconda3-2024.02-1-Linux-x86_64.sh
 wget https://repo.anaconda.com/archive/$ANACONDA_SH
 bash $ANACONDA_SH -b -p $HOME/anaconda3
 
+conda init
+
 # PATH 설정
 echo 'export PATH="$HOME/anaconda3/bin:$PATH"' >> ~/.bashrc
 source ~/.bashrc
