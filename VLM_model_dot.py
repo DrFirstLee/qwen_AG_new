@@ -89,7 +89,6 @@ class QwenVLModel:
             
         print("✅ 모델 로딩 완료!")
 
-
     def create_heatmap_from_dots_v2(self, image_size, dots):
         """
         Create a heatmap from dot coordinates using Gaussian kernels with dynamic sigma.
@@ -189,7 +188,6 @@ class QwenVLModel:
         except Exception as e:
             print(f"⚠️ Failed to load ground truth image: {str(e)}")
             return None
-
 
     def draw_dots_on_image(self, image_path, dots, gt_path, action, exo_path=None, exo_type=None, output_path=None):
         """
@@ -426,7 +424,6 @@ class QwenVLModel:
         # print(f"✅ Saved comparison image with heatmap and GT: {output_path}")
         
         return output_path, heatmap_tensor
-
 
     def ask(self, question: str) -> str:
         """
@@ -695,7 +692,6 @@ class QwenVLModel:
         print(f"final points :{points}")
         return points
 
-
     def calculate_metrics(self, pred_heatmap, gt_map):
         """
         Calculate comparison metrics between predicted heatmap and GT (following original metric.py)
@@ -756,124 +752,110 @@ class QwenVLModel:
         }
 
 
-    # QwenVLModel 클래스 안에 새 메서드 추가
-    def process_image_ego_mask_filter(
-        self,
-        image_path,
-        prompt,
-        gt_path,
-        action,
-        mask_path=None,
-        exo_type=None,
-        make_visuals=False,   # <- 기본 False: 여기서는 시각화/메트릭 안 함
-    ):
+    def process_image_exo(self, image_path, prompt, gt_path, exo_path, action, exo_type=None):
         """
-        Qwen으로 점 추출 → 즉시 마스크로 필터링.
-        - image_path: Qwen에 넣을 (마스킹된 RGB) 이미지
-        - mask_path: 이진 마스크 만들 경로(기본 image_path). (R,G,B)>0인 픽셀=마스크 내부
-        - make_visuals=False: 박스 단계에서는 보통 False로 둬서 I/O/계산 최소화
+        Process an image with the given prompt (exo view version)
+        Args:
+            image_path (str): Path to the ego image
+            prompt (str): Prompt for the model
+            gt_path (str): Path to the ground truth image
+            exo_path (str): Path to the exo view image
+            action (str): Action name for the filename
+        Returns:
+            dict: Model's response and processed information
         """
-        # 1) 추론
-        messages = [{
-            "role": "user",
-            "content": [
-                {"type": "image", "image": image_path},
-                {"type": "text", "text": prompt}
-            ]
-        }]
+        messages = [
+            {
+                "role": "user",
+                "content": [
+                    {"type": "image", "image": image_path},
+                    {"type": "image", "image": exo_path},
+                    {"type": "text", "text": prompt}
+                ]
+            }
+        ]
+                
+        # 채팅 템플릿 적용
         text = self.processor.apply_chat_template(messages, tokenize=False, add_generation_prompt=True)
+        
+        # vision 정보 처리
         image_inputs, video_inputs = process_vision_info(messages)
+        
+        # 입력 처리
         inputs = self.processor(
             text=[text],
             images=image_inputs,
             videos=video_inputs,
             padding=True,
             return_tensors="pt",
-        ).to(self.device)
+        )
+        inputs = inputs.to(self.device)
+        
+        # 추론
         with torch.no_grad():
-            output = self.model.generate(**inputs, max_new_tokens=1024, do_sample=False, temperature=0.0)
-
-        generated_ids_trimmed = [out_ids[len(in_ids):] for in_ids, out_ids in zip(inputs.input_ids, output)]
-        result = self.processor.batch_decode(generated_ids_trimmed, skip_special_tokens=True, clean_up_tokenization_spaces=False)[0]
-
-        # 2) 점 파싱
-        raw_dots = self.parse_dot_coordinates(result)
-
-        # 3) 마스크 로드(또는 생성) 및 필터링
-        if mask_path is None:
-            mask_path = image_path
-        try:
-            mask_rgb = Image.open(mask_path).convert("RGB")
-            mask_np = (np.array(mask_rgb) > 0).any(axis=2).astype(np.uint8)  # 1=inside
-        except Exception as e:
-            print(f"⚠️ Failed to build mask from {mask_path}: {e}")
-            mask_np = None
-
-        filtered_dots = []
-        if mask_np is not None:
-            H, W = mask_np.shape
-            for pt in raw_dots:
-                try:
-                    x = int(round(float(pt[0]))); y = int(round(float(pt[1])))
-                except Exception:
-                    continue
-                if 0 <= x < W and 0 <= y < H and mask_np[y, x] == 1:
-                    filtered_dots.append([x, y])
-        else:
-            filtered_dots = raw_dots
-
-        # 4) (선택) 시각화/메트릭: 박스 단계에선 보통 건너뛰고, 마지막에 한 번만
-        out = {
-            "text_result": result.strip(),
-            "dots_raw": raw_dots,
-            "dots": filtered_dots,
-            "filter_removed": len(raw_dots) - len(filtered_dots),
-            "metrics": None,
-            "dot_image_path": None,
-            "dot_only_image_path": None,
-            "heatmap_image_path": None,
-            "heatmap_tensor": None,
-        }
-
-        if make_visuals and len(filtered_dots) > 0:
-            dot_image_path, heatmap_tensor = self.draw_dots_on_image(
-                image_path, filtered_dots, gt_path, action, exo_path=None, exo_type=exo_type
+            output = self.model.generate(
+                **inputs, 
+                max_new_tokens=1024,
+                do_sample=False,
+                temperature=0.0 
             )
-            # heatmap 저장
-            script_dir = os.path.dirname(os.path.abspath(__file__))
-            res_dir = os.path.join(script_dir, 'dot_images', 'heatmaps')
-            os.makedirs(res_dir, exist_ok=True)
-            base_name = os.path.splitext(os.path.basename(image_path))[0]
-            ext = os.path.splitext(image_path)[1]
-            heatmap_filename = f"{base_name}_{action}_heatmap{ext}"
-            heatmap_path = os.path.join(res_dir, heatmap_filename)
-            transforms.ToPILImage()(heatmap_tensor.unsqueeze(0).repeat(3, 1, 1)).save(heatmap_path)
+        
+        # 결과 디코딩
+        generated_ids_trimmed = [
+            out_ids[len(in_ids):] for in_ids, out_ids in zip(inputs.input_ids, output)
+        ]
+        
+        result = self.processor.batch_decode(
+            generated_ids_trimmed, 
+            skip_special_tokens=True, 
+            clean_up_tokenization_spaces=False
+        )[0]
+        # print(f"qwen with exo Results!! : {result}")
+        # dot 좌표 파싱
+        dots = self.parse_dot_coordinates(result)
+        # print(f"parsed dots!!! : {dots}")
+        # Draw dots on the image and get metrics
+        dot_image_path, heatmap_tensor = self.draw_dots_on_image(image_path, dots, gt_path, action, exo_path, exo_type)
+        
+        # Save heatmap image
+        script_dir = os.path.dirname(os.path.abspath(__file__))
+        res_dir = os.path.join(script_dir, f'dot_images', 'heatmaps')
+        os.makedirs(res_dir, exist_ok=True)
+        base_name = os.path.splitext(os.path.basename(image_path))[0]
+        ext = os.path.splitext(image_path)[1]
+        heatmap_filename = f"{base_name}_{action}_heatmap_exo_reference{ext}"
+        heatmap_path = os.path.join(res_dir, heatmap_filename)
 
-            # dot-only 저장
-            dot_res_dir = os.path.join(script_dir, 'dot_images', 'dots_only')
-            os.makedirs(dot_res_dir, exist_ok=True)
-            dot_only_filename = f"{base_name}_{action}_dots{ext}"
-            dot_only_path = os.path.join(dot_res_dir, dot_only_filename)
-            dot_only_img = self.draw_dots_on_single_image(Image.open(image_path), filtered_dots, color='red', radius=15)
-            dot_only_img.save(dot_only_path)
+        # Convert heatmap tensor to image and save
+        heatmap_img = transforms.ToPILImage()(heatmap_tensor.unsqueeze(0).repeat(3, 1, 1))
+        heatmap_img.save(heatmap_path)
+        
+        # Save dot image separately for validation
+        dot_res_dir = os.path.join(script_dir, f'dot_images', 'dots_only')
+        os.makedirs(dot_res_dir, exist_ok=True)
+        dot_only_filename = f"{base_name}_{action}_dots_exo{ext}"
+        dot_only_path = os.path.join(dot_res_dir, dot_only_filename)
+        
+        # Create dot image (ego image with dots)
+        ego_img = Image.open(image_path)
+        dot_only_img = self.draw_dots_on_single_image(ego_img, dots, color='red', radius=15)
+        dot_only_img.save(dot_only_path)
 
-            # 메트릭
-            gt_map = self.load_ground_truth(gt_path)
-            metrics = None
-            if gt_map is not None:
-                metrics = self.calculate_metrics(heatmap_tensor, gt_map)
-
-            out.update({
-                "metrics": metrics,
-                "dot_image_path": dot_image_path,
-                "dot_only_image_path": dot_only_path,
-                "heatmap_image_path": heatmap_path,
-                "heatmap_tensor": heatmap_tensor,
-            })
-
-        return out
-
-
+        # Calculate metrics if GT is available
+        metrics = None
+        gt_map = self.load_ground_truth(gt_path)
+        if gt_map is not None and len(dots) > 0:
+            metrics = self.calculate_metrics(heatmap_tensor, gt_map)
+        
+        return {
+            'text_result': result.strip(),
+            'dots': dots,
+            'dot_image_path': dot_image_path,
+            'dot_only_image_path': dot_only_path,
+            'heatmap_image_path': heatmap_path,
+            'heatmap_tensor': heatmap_tensor,
+            'metrics': metrics
+        }
 if __name__ == "__main__":
     # Test code
     model = QwenVLModel()

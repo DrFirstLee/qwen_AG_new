@@ -21,8 +21,7 @@ source ~/.bashrc
 conda --version
 
 # gdown 설치 및 데이터 다운로드
-pip install --upgrade pip
-pip install gdown
+pip install --upgrade pip && pip install gdown
 gdown 1OEz25-u1uqKfeuyCqy7hmiOv7lIWfigk
 
 # 데이터 압축 해제
