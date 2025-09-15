@@ -15,7 +15,7 @@ os.environ["PYTORCH_CUDA_ALLOC_CONF"] = "expandable_segments:True"
 os.environ["PYTORCH_ENABLE_SDPA"] = "1"
 
 
-def affordance_grounding(model, action, object_name, image_path, gt_path, exo_path=None, exo_type=None, failed_heatmap_path=None, validation_reason=None):
+def affordance_grounding(model, action, object_name, image_path, gt_path, exo_path=None, exo_type=None):
     """
     Process each image using Qwen VL model
     """
@@ -29,82 +29,18 @@ def affordance_grounding(model, action, object_name, image_path, gt_path, exo_pa
 
         
     else:
-        if failed_heatmap_path is not None:
-            # When we have a failed heatmap, include it in the prompt for better context
-            
-            prompt = my_prompt.process_image_exo_with_heatmap_prompt(action, object_name, validation_reason)
-        
-            results = model.process_image_exo_with_heatmap(image_path, prompt, gt_path, exo_path, failed_heatmap_path, action, exo_type)
-        else:
-            prompt = my_prompt.process_image_exo_prompt(action, object_name)
-            results = model.process_image_exo(image_path, prompt, gt_path, exo_path, action, exo_type)
+
+        prompt = my_prompt.process_image_exo_prompt(action, object_name)
+        results = model.process_image_exo(image_path, prompt, gt_path, exo_path, action, exo_type)
 
     return results
-    # return {
-    #     'text_result': result.strip(),
-    #     'bboxes': bboxes,
-    #     'bbox_image_path': bbox_image_path,
-    #     'heatmap_tensor': heatmap_tensor,
-    #     'metrics': metrics
-    # }
 
 
-    # Save results
-
-
-
-    """
-    Get a random exocentric image path based on the egocentric image path
-    Args:
-        ego_path (str): Path to the egocentric image
-    Returns:
-        str: Path to a random exocentric image, or None if no exo images found
-    """
-    try:
-        # Extract action and object from ego path
-        # Example ego path: .../Seen/testset/egocentric/wash/cup/cup_003621.jpg
-        parts = ego_path.split('/')
-        action_idx = parts.index('egocentric') + 1
-        action = parts[action_idx]
-        object_name = parts[action_idx + 1]
-        
-        # Construct exo directory path
-        # Change 'testset/egocentric' to 'trainset/exocentric'
-        exo_dir = os.path.join(
-            AGD20K_reference_PATH,
-            'Seen',
-            'trainset',
-            'exocentric',
-            action,
-            object_name
-        )
-        
-        # Check if directory exists
-        if not os.path.exists(exo_dir):
-            print(f"⚠️ No exocentric directory found: {exo_dir}")
-            return None
-            
-        # Get all jpg files in the directory
-        exo_files = [f for f in os.listdir(exo_dir) if f.endswith('.jpg')]
-        
-        if not exo_files:
-            print(f"⚠️ No exocentric images found in: {exo_dir}")
-            return None
-            
-        # Select a random file
-        random_exo = random.choice(exo_files)
-        exo_path = os.path.join(exo_dir, random_exo)
-        
-        print(f"Selected exo image: {exo_path}")
-        return exo_path
-        
-    except Exception as e:
-        print(f"⚠️ Error finding exocentric image: {str(e)}")
-        return None
 
 
 def main():
     # Initialize Qwen VL model
+    missing_gt = 0
     model = QwenVLModel(model_name = model_name)
     metrics_tracker_ego = MetricsTracker(name="only_ego")
     metrics_tracker_exo_best = MetricsTracker(name="with_exo_best")
@@ -140,7 +76,7 @@ def main():
             metrics_tracker_ego.print_metrics(metrics_ego, image_path.split('/')[-1])
             
         # with exo random
-        results_exo_best = affordance_grounding(model, action, object_name, image_path, gt_path, exo_best_path, "selected_exo")     
+        results_exo_best = affordance_grounding(model, action, object_name, image_path, gt_path, exo_best_path)     
         metrics_exo_best = results_exo_best['metrics']
 
         if metrics_exo_best:
