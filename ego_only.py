@@ -19,38 +19,27 @@ os.environ["PYTORCH_CUDA_ALLOC_CONF"] = "expandable_segments:True"
 os.environ["PYTORCH_ENABLE_SDPA"] = "1"
 
 
-def affordance_grounding(model, action, object_name, image_path, gt_path, exo_path=None, exo_type=None, failed_heatmap_path=None, validation_reason=None):
+
+
+def affordance_grounding(model, action, object_name, image_path, gt_path, exo_path=None,  failed_heatmap_path=None, validation_reason=None):
     """
     Process each image using Qwen VL model
     """
-    # print(f"Processing image: Action: {action}, Object: {object_name}, Image path: {image_path.split('/')[-1]}, GT path: {gt_path.split('/')[-1]}, Image exists: {os.path.exists(image_path)}, GT exists: {os.path.exists(gt_path)}")
+    print(f"Processing image: Action: {action}, Object: {object_name}, Image path: {image_path}, GT path: {gt_path}, Image exists: {os.path.exists(image_path)}, GT exists: {os.path.exists(gt_path)}")
     
 
     if exo_path is None:
         prompt = my_prompt.process_image_ego_prompt(action, object_name)
                
-        results = model.process_image_ego(image_path, prompt, gt_path, action, exo_type)
+        results = model.process_image_ego(image_path, prompt, gt_path, action)
 
         
     else:
-        if failed_heatmap_path is not None:
-            # When we have a failed heatmap, include it in the prompt for better context
-            
-            prompt = my_prompt.process_image_exo_with_heatmap_prompt(action, object_name, validation_reason)
-        
-            results = model.process_image_exo_with_heatmap(image_path, prompt, gt_path, exo_path, failed_heatmap_path, action, exo_type)
-        else:
-            prompt = my_prompt.process_image_exo_prompt(action, object_name)
-            results = model.process_image_exo(image_path, prompt, gt_path, exo_path, action, exo_type)
+
+        prompt = my_prompt.process_image_exo_prompt(action, object_name)
+        results = model.process_image_exo(image_path, prompt, gt_path, exo_path, action)
 
     return results
-    # return {
-    #     'text_result': result.strip(),
-    #     'bboxes': bboxes,
-    #     'bbox_image_path': bbox_image_path,
-    #     'heatmap_tensor': heatmap_tensor,
-    #     'metrics': metrics
-    # }
 
 
 def main():

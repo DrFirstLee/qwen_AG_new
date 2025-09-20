@@ -105,37 +105,28 @@ class QwenVLModel:
         base_sigma = 60
         scale_factor = ((height + width) / 2) / base_size
         sigma = int( base_sigma * scale_factor)
-
         heatmap = torch.zeros((height, width))
-
-
         for dot in dots:
             # Convert coordinates to integers
             x, y = map(int, dot)
-            
             # Ensure coordinates are within image bounds
             x = max(0, min(x, width-1))
             y = max(0, min(y, height-1))
-            
             # Create coordinate grids for the entire image
             y_grid, x_grid = torch.meshgrid(
                 torch.arange(height, dtype=torch.float32),
                 torch.arange(width, dtype=torch.float32),
                 indexing='ij'
             )
-            
             # Calculate Gaussian values centered at the dot
             gaussian = torch.exp(
                 -((x_grid - x)**2 + (y_grid - y)**2) / (2 * sigma**2)
             )
-            
             # Add to heatmap
             heatmap += gaussian
-        
         # Normalize heatmap
         if heatmap.max() > 0:
             heatmap = (heatmap - heatmap.min()) / (heatmap.max() - heatmap.min() + 1e-10)
-        
         return heatmap
 
     def draw_dots_on_single_image(self, image, dots, color='red', radius=15):
@@ -206,6 +197,8 @@ class QwenVLModel:
         """
         # Load the ego image
         ego_img = Image.open(image_path)
+        if exo_path is not None:
+            exo_file_name = os.path.basename(exo_path)
         width, height = ego_img.size
         
         # Load exo image if provided
@@ -409,7 +402,7 @@ class QwenVLModel:
                 output_path = os.path.join(res_dir, f"with_exo/{output_filename}")
             elif exo_img:
                 # Fallback if exo_type not specified
-                output_filename = f"{base_name}_{action}_exo{ext}"
+                output_filename = f"{base_name}_{action}_exo_{exo_file_name}"
                 output_path = os.path.join(res_dir, f"with_exo/{output_filename}")
             elif exo_type is not None:
                 output_filename = f"{base_name}_{action}_exo_{exo_type}{ext}"
@@ -510,7 +503,7 @@ class QwenVLModel:
 
         return response
 
-    def process_image_ego(self, image_path, prompt, gt_path, action, exo_type=None):
+    def process_image_ego(self, image_path, prompt, gt_path, action):
         """
         Process an image with the given prompt
         Args:
@@ -566,13 +559,13 @@ class QwenVLModel:
             clean_up_tokenization_spaces=False
         )[0]
         
-        # print(f"qwen ego Results!! : {result}")
+        print(f"qwen ego Results!! : {result}")
         # dot 좌표 파싱
         dots = self.parse_dot_coordinates(result)
-        # print(f"parsed dots!!! : {dots}")
+        print(f"parsed dots!!! : {dots}")
         
         # Draw dots on the image and get metrics
-        dot_image_path, heatmap_tensor = self.draw_dots_on_image(image_path, dots, gt_path, action, exo_type=exo_type)
+        dot_image_path, heatmap_tensor = self.draw_dots_on_image(image_path, dots, gt_path, action)
         
         # Save heatmap image
         script_dir = os.path.dirname(os.path.abspath(__file__))
@@ -774,7 +767,8 @@ class QwenVLModel:
                 ]
             }
         ]
-                
+        exo_filename =  os.path.basename(exo_path)
+        print(f"exo file name : {exo_filename} / exo_path")
         # 채팅 템플릿 적용
         text = self.processor.apply_chat_template(messages, tokenize=False, add_generation_prompt=True)
         
@@ -823,7 +817,7 @@ class QwenVLModel:
         os.makedirs(res_dir, exist_ok=True)
         base_name = os.path.splitext(os.path.basename(image_path))[0]
         ext = os.path.splitext(image_path)[1]
-        heatmap_filename = f"{base_name}_{action}_heatmap_exo_reference{ext}"
+        heatmap_filename = f"{base_name}_{action}_heatmap_exo_reference_{exo_filename}"
         heatmap_path = os.path.join(res_dir, heatmap_filename)
 
         # Convert heatmap tensor to image and save

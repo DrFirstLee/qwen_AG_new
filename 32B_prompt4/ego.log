@@ -1,0 +1,2211 @@
+nohup: ignoring input
+💻 사용 디바이스: cuda
+🤖 Qwen/Qwen2.5-VL-32B-Instruct 모델 로딩중...
+Loading checkpoint shards:   0%|          | 0/18 [00:00<?, ?it/s]Loading checkpoint shards:   6%|▌         | 1/18 [00:00<00:07,  2.15it/s]Loading checkpoint shards:  11%|█         | 2/18 [00:00<00:07,  2.16it/s]Loading checkpoint shards:  17%|█▋        | 3/18 [00:01<00:07,  2.14it/s]Loading checkpoint shards:  22%|██▏       | 4/18 [00:01<00:06,  2.16it/s]Loading checkpoint shards:  28%|██▊       | 5/18 [00:02<00:05,  2.17it/s]Loading checkpoint shards:  33%|███▎      | 6/18 [00:02<00:05,  2.16it/s]Loading checkpoint shards:  39%|███▉      | 7/18 [00:03<00:05,  2.18it/s]Loading checkpoint shards:  44%|████▍     | 8/18 [00:03<00:04,  2.18it/s]Loading checkpoint shards:  50%|█████     | 9/18 [00:04<00:04,  2.19it/s]Loading checkpoint shards:  56%|█████▌    | 10/18 [00:04<00:03,  2.21it/s]Loading checkpoint shards:  61%|██████    | 11/18 [00:05<00:03,  2.21it/s]Loading checkpoint shards:  67%|██████▋   | 12/18 [00:05<00:02,  2.21it/s]Loading checkpoint shards:  72%|███████▏  | 13/18 [00:05<00:02,  2.20it/s]Loading checkpoint shards:  78%|███████▊  | 14/18 [00:06<00:01,  2.20it/s]Loading checkpoint shards:  83%|████████▎ | 15/18 [00:06<00:01,  2.21it/s]Loading checkpoint shards:  89%|████████▉ | 16/18 [00:07<00:00,  2.20it/s]Loading checkpoint shards:  94%|█████████▍| 17/18 [00:07<00:00,  2.21it/s]Loading checkpoint shards: 100%|██████████| 18/18 [00:08<00:00,  2.36it/s]Loading checkpoint shards: 100%|██████████| 18/18 [00:08<00:00,  2.22it/s]
+✅ 모델 로딩 완료!
+Processing 123 samples...
+==================================================
+--- Start  1  / 123 --------------------------------------------------------------------------------
+Action : jump, Object : skis image_name : skis_002829.jpg
+Processing image: Action: jump, Object: skis, Image path: /root/AGD20K/Seen/testset/egocentric/jump/skis/skis_002829.jpg, GT path: /root/AGD20K/Seen/testset/GT/jump/skis/skis_002829.png, Image exists: True, GT exists: True
+final points :[[150, 500], [150, 100], [150, 900], [390, 500], [390, 100], [390, 900]]
+parsed dots!!! : [[150, 500], [150, 100], [150, 900], [390, 500], [390, 100], [390, 900]]
+
+==================================================
+Metrics for only_ego skis_002829.jpg:
+ only_ego Current - KLD: 2.2920 | SIM: 0.1727 | NSS: -0.0269
+
+Cumulative only_ego  Averages over 1 samples:
+Average - KLD: 2.2920 | SIM: 0.1727 | NSS: -0.0269
+==================================================
+
+*** End   ******************************************************************************************************************************************************
+
+
+
+--- Start  2  / 123 --------------------------------------------------------------------------------
+Action : jump, Object : skateboard image_name : skateboard_002387.jpg
+Processing image: Action: jump, Object: skateboard, Image path: /root/AGD20K/Seen/testset/egocentric/jump/skateboard/skateboard_002387.jpg, GT path: /root/AGD20K/Seen/testset/GT/jump/skateboard/skateboard_002387.png, Image exists: True, GT exists: True
+final points :[[400, 350], [700, 450], [600, 700]]
+parsed dots!!! : [[400, 350], [700, 450], [600, 700]]
+
+==================================================
+Metrics for only_ego skateboard_002387.jpg:
+ only_ego Current - KLD: 4.5268 | SIM: 0.3297 | NSS: 0.7154
+
+Cumulative only_ego  Averages over 2 samples:
+Average - KLD: 3.4094 | SIM: 0.2512 | NSS: 0.3442
+==================================================
+
+*** End   ******************************************************************************************************************************************************
+
+
+
+--- Start  3  / 123 --------------------------------------------------------------------------------
+Action : jump, Object : surfboard image_name : surfboard_000658.jpg
+Processing image: Action: jump, Object: surfboard, Image path: /root/AGD20K/Seen/testset/egocentric/jump/surfboard/surfboard_000658.jpg, GT path: /root/AGD20K/Seen/testset/GT/jump/surfboard/surfboard_000658.png, Image exists: True, GT exists: True
+final points :[[150, 100], [150, 700], [150, 1400], [650, 100], [650, 700], [650, 1400]]
+parsed dots!!! : [[150, 100], [150, 700], [150, 1400], [650, 100], [650, 700], [650, 1400]]
+
+==================================================
+Metrics for only_ego surfboard_000658.jpg:
+ only_ego Current - KLD: 2.6450 | SIM: 0.1727 | NSS: -0.5775
+
+Cumulative only_ego  Averages over 3 samples:
+Average - KLD: 3.1546 | SIM: 0.2250 | NSS: 0.0370
+==================================================
+
+*** End   ******************************************************************************************************************************************************
+
+
+
+--- Start  4  / 123 --------------------------------------------------------------------------------
+Action : jump, Object : snowboard image_name : snowboard_001704.jpg
+Processing image: Action: jump, Object: snowboard, Image path: /root/AGD20K/Seen/testset/egocentric/jump/snowboard/snowboard_001704.jpg, GT path: /root/AGD20K/Seen/testset/GT/jump/snowboard/snowboard_001704.png, Image exists: True, GT exists: True
+final points :[[140, 650], [140, 100], [140, 1350]]
+parsed dots!!! : [[140, 650], [140, 100], [140, 1350]]
+
+==================================================
+Metrics for only_ego snowboard_001704.jpg:
+ only_ego Current - KLD: 4.8774 | SIM: 0.1328 | NSS: -0.3680
+
+Cumulative only_ego  Averages over 4 samples:
+Average - KLD: 3.5853 | SIM: 0.2020 | NSS: -0.0643
+==================================================
+
+*** End   ******************************************************************************************************************************************************
+
+
+
+--- Start  5  / 123 --------------------------------------------------------------------------------
+Action : peel, Object : carrot image_name : carrot_003707.jpg
+Processing image: Action: peel, Object: carrot, Image path: /root/AGD20K/Seen/testset/egocentric/peel/carrot/carrot_003707.jpg, GT path: /root/AGD20K/Seen/testset/GT/peel/carrot/carrot_003707.png, Image exists: True, GT exists: True
+final points :[[108, 120], [320, 170], [550, 190], [230, 240], [350, 300], [400, 350]]
+parsed dots!!! : [[108, 120], [320, 170], [550, 190], [230, 240], [350, 300], [400, 350]]
+
+==================================================
+Metrics for only_ego carrot_003707.jpg:
+ only_ego Current - KLD: 1.5917 | SIM: 0.2709 | NSS: 0.5578
+
+Cumulative only_ego  Averages over 5 samples:
+Average - KLD: 3.1866 | SIM: 0.2157 | NSS: 0.0601
+==================================================
+
+*** End   ******************************************************************************************************************************************************
+
+
+
+--- Start  6  / 123 --------------------------------------------------------------------------------
+Action : peel, Object : orange image_name : orange_001193.jpg
+Processing image: Action: peel, Object: orange, Image path: /root/AGD20K/Seen/testset/egocentric/peel/orange/orange_001193.jpg, GT path: /root/AGD20K/Seen/testset/GT/peel/orange/orange_001193.png, Image exists: True, GT exists: True
+final points :[[275, 200], [340, 280], [390, 220]]
+parsed dots!!! : [[275, 200], [340, 280], [390, 220]]
+
+==================================================
+Metrics for only_ego orange_001193.jpg:
+ only_ego Current - KLD: 0.9405 | SIM: 0.5994 | NSS: 1.2546
+
+Cumulative only_ego  Averages over 6 samples:
+Average - KLD: 2.8122 | SIM: 0.2797 | NSS: 0.2592
+==================================================
+
+*** End   ******************************************************************************************************************************************************
+
+
+
+--- Start  7  / 123 --------------------------------------------------------------------------------
+Action : peel, Object : banana image_name : banana_000480.jpg
+Processing image: Action: peel, Object: banana, Image path: /root/AGD20K/Seen/testset/egocentric/peel/banana/banana_000480.jpg, GT path: /root/AGD20K/Seen/testset/GT/peel/banana/banana_000480.png, Image exists: True, GT exists: True
+final points :[[108, 295], [275, 250], [590, 305]]
+parsed dots!!! : [[108, 295], [275, 250], [590, 305]]
+
+==================================================
+Metrics for only_ego banana_000480.jpg:
+ only_ego Current - KLD: 2.1657 | SIM: 0.2137 | NSS: 0.4582
+
+Cumulative only_ego  Averages over 7 samples:
+Average - KLD: 2.7199 | SIM: 0.2703 | NSS: 0.2877
+==================================================
+
+*** End   ******************************************************************************************************************************************************
+
+
+
+--- Start  8  / 123 --------------------------------------------------------------------------------
+Action : peel, Object : apple image_name : apple_001541.jpg
+Processing image: Action: peel, Object: apple, Image path: /root/AGD20K/Seen/testset/egocentric/peel/apple/apple_001541.jpg, GT path: /root/AGD20K/Seen/testset/GT/peel/apple/apple_001541.png, Image exists: True, GT exists: True
+final points :[[280, 150], [275, 300], [280, 400]]
+parsed dots!!! : [[280, 150], [275, 300], [280, 400]]
+
+==================================================
+Metrics for only_ego apple_001541.jpg:
+ only_ego Current - KLD: 0.6945 | SIM: 0.6232 | NSS: 0.9690
+
+Cumulative only_ego  Averages over 8 samples:
+Average - KLD: 2.4667 | SIM: 0.3144 | NSS: 0.3728
+==================================================
+
+*** End   ******************************************************************************************************************************************************
+
+
+
+--- Start  9  / 123 --------------------------------------------------------------------------------
+Action : wash, Object : toothbrush image_name : toothbrush_001991.jpg
+Processing image: Action: wash, Object: toothbrush, Image path: /root/AGD20K/Seen/testset/egocentric/wash/toothbrush/toothbrush_001991.jpg, GT path: /root/AGD20K/Seen/testset/GT/wash/toothbrush/toothbrush_001991.png, Image exists: True, GT exists: True
+final points :[[590, 600], [595, 510], [595, 680]]
+parsed dots!!! : [[590, 600], [595, 510], [595, 680]]
+
+==================================================
+Metrics for only_ego toothbrush_001991.jpg:
+ only_ego Current - KLD: 6.5249 | SIM: 0.0403 | NSS: -0.2684
+
+Cumulative only_ego  Averages over 9 samples:
+Average - KLD: 2.9176 | SIM: 0.2839 | NSS: 0.3016
+==================================================
+
+*** End   ******************************************************************************************************************************************************
+
+
+
+--- Start  10  / 123 --------------------------------------------------------------------------------
+Action : wash, Object : cup image_name : cup_003621.jpg
+Processing image: Action: wash, Object: cup, Image path: /root/AGD20K/Seen/testset/egocentric/wash/cup/cup_003621.jpg, GT path: /root/AGD20K/Seen/testset/GT/wash/cup/cup_003621.png, Image exists: True, GT exists: True
+final points :[[508, 170], [240, 250], [360, 380]]
+parsed dots!!! : [[508, 170], [240, 250], [360, 380]]
+
+==================================================
+Metrics for only_ego cup_003621.jpg:
+ only_ego Current - KLD: 6.1122 | SIM: 0.0335 | NSS: -0.5617
+
+Cumulative only_ego  Averages over 10 samples:
+Average - KLD: 3.2371 | SIM: 0.2589 | NSS: 0.2153
+==================================================
+
+*** End   ******************************************************************************************************************************************************
+
+
+
+--- Start  11  / 123 --------------------------------------------------------------------------------
+Action : wash, Object : orange image_name : orange_001193.jpg
+Processing image: Action: wash, Object: orange, Image path: /root/AGD20K/Seen/testset/egocentric/wash/orange/orange_001193.jpg, GT path: /root/AGD20K/Seen/testset/GT/wash/orange/orange_001193.png, Image exists: True, GT exists: True
+final points :[[275, 200], [360, 280], [420, 220]]
+parsed dots!!! : [[275, 200], [360, 280], [420, 220]]
+
+==================================================
+Metrics for only_ego orange_001193.jpg:
+ only_ego Current - KLD: 0.4626 | SIM: 0.7067 | NSS: 1.3900
+
+Cumulative only_ego  Averages over 11 samples:
+Average - KLD: 2.9848 | SIM: 0.2996 | NSS: 0.3220
+==================================================
+
+*** End   ******************************************************************************************************************************************************
+
+
+
+--- Start  12  / 123 --------------------------------------------------------------------------------
+Action : wash, Object : fork image_name : fork_001691.jpg
+Processing image: Action: wash, Object: fork, Image path: /root/AGD20K/Seen/testset/egocentric/wash/fork/fork_001691.jpg, GT path: /root/AGD20K/Seen/testset/GT/wash/fork/fork_001691.png, Image exists: True, GT exists: True
+final points :[[600, 700], [450, 500], [200, 350]]
+parsed dots!!! : [[600, 700], [450, 500], [200, 350]]
+
+==================================================
+Metrics for only_ego fork_001691.jpg:
+ only_ego Current - KLD: 3.4132 | SIM: 0.2082 | NSS: 0.5031
+
+Cumulative only_ego  Averages over 12 samples:
+Average - KLD: 3.0205 | SIM: 0.2920 | NSS: 0.3371
+==================================================
+
+*** End   ******************************************************************************************************************************************************
+
+
+
+--- Start  13  / 123 --------------------------------------------------------------------------------
+Action : wash, Object : wine_glass image_name : wine_glass_000186.jpg
+Processing image: Action: wash, Object: wine_glass, Image path: /root/AGD20K/Seen/testset/egocentric/wash/wine_glass/wine_glass_000186.jpg, GT path: /root/AGD20K/Seen/testset/GT/wash/wine_glass/wine_glass_000186.png, Image exists: True, GT exists: True
+final points :[[160, 105], [210, 250], [210, 340]]
+parsed dots!!! : [[160, 105], [210, 250], [210, 340]]
+
+==================================================
+Metrics for only_ego wine_glass_000186.jpg:
+ only_ego Current - KLD: 0.8562 | SIM: 0.4925 | NSS: 1.4274
+
+Cumulative only_ego  Averages over 13 samples:
+Average - KLD: 2.8541 | SIM: 0.3074 | NSS: 0.4210
+==================================================
+
+*** End   ******************************************************************************************************************************************************
+
+
+
+--- Start  14  / 123 --------------------------------------------------------------------------------
+Action : wash, Object : bowl image_name : bowl_002825.jpg
+Processing image: Action: wash, Object: bowl, Image path: /root/AGD20K/Seen/testset/egocentric/wash/bowl/bowl_002825.jpg, GT path: /root/AGD20K/Seen/testset/GT/wash/bowl/bowl_002825.png, Image exists: True, GT exists: True
+final points :[[50, 140], [250, 140], [450, 140], [50, 140], [250, 140], [450, 140]]
+parsed dots!!! : [[50, 140], [250, 140], [450, 140], [50, 140], [250, 140], [450, 140]]
+
+==================================================
+Metrics for only_ego bowl_002825.jpg:
+ only_ego Current - KLD: 1.9643 | SIM: 0.3825 | NSS: 0.3107
+
+Cumulative only_ego  Averages over 14 samples:
+Average - KLD: 2.7905 | SIM: 0.3128 | NSS: 0.4131
+==================================================
+
+*** End   ******************************************************************************************************************************************************
+
+
+
+--- Start  15  / 123 --------------------------------------------------------------------------------
+Action : wash, Object : knife image_name : knife_002720.jpg
+Processing image: Action: wash, Object: knife, Image path: /root/AGD20K/Seen/testset/egocentric/wash/knife/knife_002720.jpg, GT path: /root/AGD20K/Seen/testset/GT/wash/knife/knife_002720.png, Image exists: True, GT exists: True
+final points :[[400, 250], [360, 170], [330, 80]]
+parsed dots!!! : [[400, 250], [360, 170], [330, 80]]
+
+==================================================
+Metrics for only_ego knife_002720.jpg:
+ only_ego Current - KLD: 0.7837 | SIM: 0.4740 | NSS: 2.6412
+
+Cumulative only_ego  Averages over 15 samples:
+Average - KLD: 2.6567 | SIM: 0.3235 | NSS: 0.5617
+==================================================
+
+*** End   ******************************************************************************************************************************************************
+
+
+
+--- Start  16  / 123 --------------------------------------------------------------------------------
+Action : sit_on, Object : chair image_name : chair_002839.jpg
+Processing image: Action: sit_on, Object: chair, Image path: /root/AGD20K/Seen/testset/egocentric/sit_on/chair/chair_002839.jpg, GT path: /root/AGD20K/Seen/testset/GT/sit_on/chair/chair_002839.png, Image exists: True, GT exists: True
+final points :[[150, 480], [200, 250], [30, 450]]
+parsed dots!!! : [[150, 480], [200, 250], [30, 450]]
+
+==================================================
+Metrics for only_ego chair_002839.jpg:
+ only_ego Current - KLD: 1.3346 | SIM: 0.4360 | NSS: 0.7702
+
+Cumulative only_ego  Averages over 16 samples:
+Average - KLD: 2.5741 | SIM: 0.3305 | NSS: 0.5747
+==================================================
+
+*** End   ******************************************************************************************************************************************************
+
+
+
+--- Start  17  / 123 --------------------------------------------------------------------------------
+Action : sit_on, Object : couch image_name : couch_000779.jpg
+Processing image: Action: sit_on, Object: couch, Image path: /root/AGD20K/Seen/testset/egocentric/sit_on/couch/couch_000779.jpg, GT path: /root/AGD20K/Seen/testset/GT/sit_on/couch/couch_000779.png, Image exists: True, GT exists: True
+final points :[[250, 260], [170, 250], [340, 250]]
+parsed dots!!! : [[250, 260], [170, 250], [340, 250]]
+
+==================================================
+Metrics for only_ego couch_000779.jpg:
+ only_ego Current - KLD: 0.7077 | SIM: 0.5056 | NSS: 1.9599
+
+Cumulative only_ego  Averages over 17 samples:
+Average - KLD: 2.4643 | SIM: 0.3408 | NSS: 0.6562
+==================================================
+
+*** End   ******************************************************************************************************************************************************
+
+
+
+--- Start  18  / 123 --------------------------------------------------------------------------------
+Action : sit_on, Object : bed image_name : bed_003622.jpg
+Processing image: Action: sit_on, Object: bed, Image path: /root/AGD20K/Seen/testset/egocentric/sit_on/bed/bed_003622.jpg, GT path: /root/AGD20K/Seen/testset/GT/sit_on/bed/bed_003622.png, Image exists: True, GT exists: True
+final points :[[280, 240], [350, 290], [420, 330]]
+parsed dots!!! : [[280, 240], [350, 290], [420, 330]]
+
+==================================================
+Metrics for only_ego bed_003622.jpg:
+ only_ego Current - KLD: 0.7177 | SIM: 0.5592 | NSS: 1.5393
+
+Cumulative only_ego  Averages over 18 samples:
+Average - KLD: 2.3673 | SIM: 0.3530 | NSS: 0.7052
+==================================================
+
+*** End   ******************************************************************************************************************************************************
+
+
+
+--- Start  19  / 123 --------------------------------------------------------------------------------
+Action : sit_on, Object : bench image_name : bench_001877.jpg
+Processing image: Action: sit_on, Object: bench, Image path: /root/AGD20K/Seen/testset/egocentric/sit_on/bench/bench_001877.jpg, GT path: /root/AGD20K/Seen/testset/GT/sit_on/bench/bench_001877.png, Image exists: True, GT exists: True
+final points :[[150, 300], [70, 300], [280, 300]]
+parsed dots!!! : [[150, 300], [70, 300], [280, 300]]
+
+==================================================
+Metrics for only_ego bench_001877.jpg:
+ only_ego Current - KLD: 0.9796 | SIM: 0.5407 | NSS: 1.1904
+
+Cumulative only_ego  Averages over 19 samples:
+Average - KLD: 2.2942 | SIM: 0.3629 | NSS: 0.7308
+==================================================
+
+*** End   ******************************************************************************************************************************************************
+
+
+
+--- Start  20  / 123 --------------------------------------------------------------------------------
+Action : sit_on, Object : bicycle image_name : bicycle_002100.jpg
+Processing image: Action: sit_on, Object: bicycle, Image path: /root/AGD20K/Seen/testset/egocentric/sit_on/bicycle/bicycle_002100.jpg, GT path: /root/AGD20K/Seen/testset/GT/sit_on/bicycle/bicycle_002100.png, Image exists: True, GT exists: True
+final points :[[245, 110], [298, 100], [356, 100], [220, 240], [370, 220]]
+parsed dots!!! : [[245, 110], [298, 100], [356, 100], [220, 240], [370, 220]]
+
+==================================================
+Metrics for only_ego bicycle_002100.jpg:
+ only_ego Current - KLD: 1.4102 | SIM: 0.2980 | NSS: 2.4853
+
+Cumulative only_ego  Averages over 20 samples:
+Average - KLD: 2.2500 | SIM: 0.3596 | NSS: 0.8185
+==================================================
+
+*** End   ******************************************************************************************************************************************************
+
+
+
+--- Start  21  / 123 --------------------------------------------------------------------------------
+Action : sit_on, Object : motorcycle image_name : motorcycle_000837.jpg
+Processing image: Action: sit_on, Object: motorcycle, Image path: /root/AGD20K/Seen/testset/egocentric/sit_on/motorcycle/motorcycle_000837.jpg, GT path: /root/AGD20K/Seen/testset/GT/sit_on/motorcycle/motorcycle_000837.png, Image exists: True, GT exists: True
+final points :[[405, 190], [220, 160], [340, 330], [405, 190], [220, 160], [340, 330]]
+parsed dots!!! : [[405, 190], [220, 160], [340, 330], [405, 190], [220, 160], [340, 330]]
+
+==================================================
+Metrics for only_ego motorcycle_000837.jpg:
+ only_ego Current - KLD: 1.4393 | SIM: 0.2774 | NSS: 1.9017
+
+Cumulative only_ego  Averages over 21 samples:
+Average - KLD: 2.2114 | SIM: 0.3557 | NSS: 0.8701
+==================================================
+
+*** End   ******************************************************************************************************************************************************
+
+
+
+--- Start  22  / 123 --------------------------------------------------------------------------------
+Action : sit_on, Object : skateboard image_name : skateboard_001460.jpg
+Processing image: Action: sit_on, Object: skateboard, Image path: /root/AGD20K/Seen/testset/egocentric/sit_on/skateboard/skateboard_001460.jpg, GT path: /root/AGD20K/Seen/testset/GT/sit_on/skateboard/skateboard_001460.png, Image exists: True, GT exists: True
+final points :[[460, 350], [180, 400], [750, 300]]
+parsed dots!!! : [[460, 350], [180, 400], [750, 300]]
+
+==================================================
+Metrics for only_ego skateboard_001460.jpg:
+ only_ego Current - KLD: 0.8909 | SIM: 0.5980 | NSS: 0.7215
+
+Cumulative only_ego  Averages over 22 samples:
+Average - KLD: 2.1514 | SIM: 0.3667 | NSS: 0.8633
+==================================================
+
+*** End   ******************************************************************************************************************************************************
+
+
+
+--- Start  23  / 123 --------------------------------------------------------------------------------
+Action : sit_on, Object : surfboard image_name : surfboard_000010.jpg
+Processing image: Action: sit_on, Object: surfboard, Image path: /root/AGD20K/Seen/testset/egocentric/sit_on/surfboard/surfboard_000010.jpg, GT path: /root/AGD20K/Seen/testset/GT/sit_on/surfboard/surfboard_000010.png, Image exists: True, GT exists: True
+final points :[[150, 300], [150, 200], [150, 400]]
+parsed dots!!! : [[150, 300], [150, 200], [150, 400]]
+
+==================================================
+Metrics for only_ego surfboard_000010.jpg:
+ only_ego Current - KLD: 3.2173 | SIM: 0.4767 | NSS: 0.1615
+
+Cumulative only_ego  Averages over 23 samples:
+Average - KLD: 2.1977 | SIM: 0.3715 | NSS: 0.8328
+==================================================
+
+*** End   ******************************************************************************************************************************************************
+
+
+
+--- Start  24  / 123 --------------------------------------------------------------------------------
+Action : drag, Object : suitcase image_name : suitcase_002998.jpg
+Processing image: Action: drag, Object: suitcase, Image path: /root/AGD20K/Seen/testset/egocentric/drag/suitcase/suitcase_002998.jpg, GT path: /root/AGD20K/Seen/testset/GT/drag/suitcase/suitcase_002998.png, Image exists: True, GT exists: True
+final points :[[470, 35], [470, 150], [470, 1350]]
+parsed dots!!! : [[470, 35], [470, 150], [470, 1350]]
+
+==================================================
+Metrics for only_ego suitcase_002998.jpg:
+ only_ego Current - KLD: 1.3732 | SIM: 0.3106 | NSS: 3.5100
+
+Cumulative only_ego  Averages over 24 samples:
+Average - KLD: 2.1634 | SIM: 0.3690 | NSS: 0.9444
+==================================================
+
+*** End   ******************************************************************************************************************************************************
+
+
+
+--- Start  25  / 123 --------------------------------------------------------------------------------
+Action : type_on, Object : laptop image_name : laptop_000585.jpg
+Processing image: Action: type_on, Object: laptop, Image path: /root/AGD20K/Seen/testset/egocentric/type_on/laptop/laptop_000585.jpg, GT path: /root/AGD20K/Seen/testset/GT/type_on/laptop/laptop_000585.png, Image exists: True, GT exists: True
+final points :[[80, 190], [270, 240], [360, 270]]
+parsed dots!!! : [[80, 190], [270, 240], [360, 270]]
+
+==================================================
+Metrics for only_ego laptop_000585.jpg:
+ only_ego Current - KLD: 1.2312 | SIM: 0.3890 | NSS: 0.9725
+
+Cumulative only_ego  Averages over 25 samples:
+Average - KLD: 2.1261 | SIM: 0.3698 | NSS: 0.9455
+==================================================
+
+*** End   ******************************************************************************************************************************************************
+
+
+
+--- Start  26  / 123 --------------------------------------------------------------------------------
+Action : type_on, Object : keyboard image_name : keyboard_000439.jpg
+Processing image: Action: type_on, Object: keyboard, Image path: /root/AGD20K/Seen/testset/egocentric/type_on/keyboard/keyboard_000439.jpg, GT path: /root/AGD20K/Seen/testset/GT/type_on/keyboard/keyboard_000439.png, Image exists: True, GT exists: True
+final points :[[120, 185], [260, 240], [370, 290]]
+parsed dots!!! : [[120, 185], [260, 240], [370, 290]]
+
+==================================================
+Metrics for only_ego keyboard_000439.jpg:
+ only_ego Current - KLD: 3.9107 | SIM: 0.4055 | NSS: 0.5555
+
+Cumulative only_ego  Averages over 26 samples:
+Average - KLD: 2.1947 | SIM: 0.3711 | NSS: 0.9305
+==================================================
+
+*** End   ******************************************************************************************************************************************************
+
+
+
+--- Start  27  / 123 --------------------------------------------------------------------------------
+Action : pack, Object : suitcase image_name : suitcase_002212.jpg
+Processing image: Action: pack, Object: suitcase, Image path: /root/AGD20K/Seen/testset/egocentric/pack/suitcase/suitcase_002212.jpg, GT path: /root/AGD20K/Seen/testset/GT/pack/suitcase/suitcase_002212.png, Image exists: True, GT exists: True
+final points :[[600, 750], [1180, 690], [340, 1400], [600, 750], [1180, 690], [340, 1400]]
+parsed dots!!! : [[600, 750], [1180, 690], [340, 1400], [600, 750], [1180, 690], [340, 1400]]
+
+==================================================
+Metrics for only_ego suitcase_002212.jpg:
+ only_ego Current - KLD: 1.6985 | SIM: 0.3242 | NSS: 0.3365
+
+Cumulative only_ego  Averages over 27 samples:
+Average - KLD: 2.1764 | SIM: 0.3694 | NSS: 0.9085
+==================================================
+
+*** End   ******************************************************************************************************************************************************
+
+
+
+--- Start  28  / 123 --------------------------------------------------------------------------------
+Action : cut, Object : carrot image_name : carrot_001443.jpg
+Processing image: Action: cut, Object: carrot, Image path: /root/AGD20K/Seen/testset/egocentric/cut/carrot/carrot_001443.jpg, GT path: /root/AGD20K/Seen/testset/GT/cut/carrot/carrot_001443.png, Image exists: True, GT exists: True
+final points :[[240, 155], [180, 175], [110, 205], [290, 110], [320, 100], [380, 70], [360, 130], [330, 150], [310, 170]]
+parsed dots!!! : [[240, 155], [180, 175], [110, 205], [290, 110], [320, 100], [380, 70], [360, 130], [330, 150], [310, 170]]
+
+==================================================
+Metrics for only_ego carrot_001443.jpg:
+ only_ego Current - KLD: 1.3687 | SIM: 0.3061 | NSS: 2.0360
+
+Cumulative only_ego  Averages over 28 samples:
+Average - KLD: 2.1475 | SIM: 0.3671 | NSS: 0.9488
+==================================================
+
+*** End   ******************************************************************************************************************************************************
+
+
+
+--- Start  29  / 123 --------------------------------------------------------------------------------
+Action : cut, Object : orange image_name : orange_001193.jpg
+Processing image: Action: cut, Object: orange, Image path: /root/AGD20K/Seen/testset/egocentric/cut/orange/orange_001193.jpg, GT path: /root/AGD20K/Seen/testset/GT/cut/orange/orange_001193.png, Image exists: True, GT exists: True
+final points :[[275, 200], [360, 280], [420, 220]]
+parsed dots!!! : [[275, 200], [360, 280], [420, 220]]
+
+==================================================
+Metrics for only_ego orange_001193.jpg:
+ only_ego Current - KLD: 0.6050 | SIM: 0.6724 | NSS: 1.3665
+
+Cumulative only_ego  Averages over 29 samples:
+Average - KLD: 2.0943 | SIM: 0.3777 | NSS: 0.9632
+==================================================
+
+*** End   ******************************************************************************************************************************************************
+
+
+
+--- Start  30  / 123 --------------------------------------------------------------------------------
+Action : cut, Object : banana image_name : banana_002623.jpg
+Processing image: Action: cut, Object: banana, Image path: /root/AGD20K/Seen/testset/egocentric/cut/banana/banana_002623.jpg, GT path: /root/AGD20K/Seen/testset/GT/cut/banana/banana_002623.png, Image exists: True, GT exists: True
+final points :[[408, 516], [270, 460], [100, 510]]
+parsed dots!!! : [[408, 516], [270, 460], [100, 510]]
+
+==================================================
+Metrics for only_ego banana_002623.jpg:
+ only_ego Current - KLD: 3.2609 | SIM: 0.3690 | NSS: 0.6665
+
+Cumulative only_ego  Averages over 30 samples:
+Average - KLD: 2.1332 | SIM: 0.3774 | NSS: 0.9533
+==================================================
+
+*** End   ******************************************************************************************************************************************************
+
+
+
+--- Start  31  / 123 --------------------------------------------------------------------------------
+Action : cut, Object : apple image_name : apple_000054.jpg
+Processing image: Action: cut, Object: apple, Image path: /root/AGD20K/Seen/testset/egocentric/cut/apple/apple_000054.jpg, GT path: /root/AGD20K/Seen/testset/GT/cut/apple/apple_000054.png, Image exists: True, GT exists: True
+final points :[[150, 170], [200, 250], [180, 320], [320, 190], [380, 260], [360, 340]]
+parsed dots!!! : [[150, 170], [200, 250], [180, 320], [320, 190], [380, 260], [360, 340]]
+
+==================================================
+Metrics for only_ego apple_000054.jpg:
+ only_ego Current - KLD: 1.0742 | SIM: 0.5805 | NSS: 0.6232
+
+Cumulative only_ego  Averages over 31 samples:
+Average - KLD: 2.0991 | SIM: 0.3839 | NSS: 0.9426
+==================================================
+
+*** End   ******************************************************************************************************************************************************
+
+
+
+--- Start  32  / 123 --------------------------------------------------------------------------------
+Action : ride, Object : bicycle image_name : bicycle_003046.jpg
+Processing image: Action: ride, Object: bicycle, Image path: /root/AGD20K/Seen/testset/egocentric/ride/bicycle/bicycle_003046.jpg, GT path: /root/AGD20K/Seen/testset/GT/ride/bicycle/bicycle_003046.png, Image exists: True, GT exists: True
+final points :[[260, 107], [380, 119], [190, 340], [220, 355], [165, 135]]
+parsed dots!!! : [[260, 107], [380, 119], [190, 340], [220, 355], [165, 135]]
+
+==================================================
+Metrics for only_ego bicycle_003046.jpg:
+ only_ego Current - KLD: 0.7467 | SIM: 0.5053 | NSS: 1.8554
+
+Cumulative only_ego  Averages over 32 samples:
+Average - KLD: 2.0568 | SIM: 0.3877 | NSS: 0.9711
+==================================================
+
+*** End   ******************************************************************************************************************************************************
+
+
+
+--- Start  33  / 123 --------------------------------------------------------------------------------
+Action : ride, Object : motorcycle image_name : motorcycle_002198.jpg
+Processing image: Action: ride, Object: motorcycle, Image path: /root/AGD20K/Seen/testset/egocentric/ride/motorcycle/motorcycle_002198.jpg, GT path: /root/AGD20K/Seen/testset/GT/ride/motorcycle/motorcycle_002198.png, Image exists: True, GT exists: True
+final points :[[290, 85], [220, 100], [460, 270]]
+parsed dots!!! : [[290, 85], [220, 100], [460, 270]]
+
+==================================================
+Metrics for only_ego motorcycle_002198.jpg:
+ only_ego Current - KLD: 2.0267 | SIM: 0.2908 | NSS: 0.6494
+
+Cumulative only_ego  Averages over 33 samples:
+Average - KLD: 2.0559 | SIM: 0.3848 | NSS: 0.9614
+==================================================
+
+*** End   ******************************************************************************************************************************************************
+
+
+
+--- Start  34  / 123 --------------------------------------------------------------------------------
+Action : cut_with, Object : scissors image_name : scissors_002479.jpg
+Processing image: Action: cut_with, Object: scissors, Image path: /root/AGD20K/Seen/testset/egocentric/cut_with/scissors/scissors_002479.jpg, GT path: /root/AGD20K/Seen/testset/GT/cut_with/scissors/scissors_002479.png, Image exists: True, GT exists: True
+final points :[[405, 130], [410, 260], [408, 340]]
+parsed dots!!! : [[405, 130], [410, 260], [408, 340]]
+
+==================================================
+Metrics for only_ego scissors_002479.jpg:
+ only_ego Current - KLD: 1.7789 | SIM: 0.2397 | NSS: 1.0988
+
+Cumulative only_ego  Averages over 34 samples:
+Average - KLD: 2.0477 | SIM: 0.3805 | NSS: 0.9654
+==================================================
+
+*** End   ******************************************************************************************************************************************************
+
+
+
+--- Start  35  / 123 --------------------------------------------------------------------------------
+Action : cut_with, Object : knife image_name : knife_001749.jpg
+Processing image: Action: cut_with, Object: knife, Image path: /root/AGD20K/Seen/testset/egocentric/cut_with/knife/knife_001749.jpg, GT path: /root/AGD20K/Seen/testset/GT/cut_with/knife/knife_001749.png, Image exists: True, GT exists: True
+final points :[[315, 200], [400, 210], [60, 190]]
+parsed dots!!! : [[315, 200], [400, 210], [60, 190]]
+
+==================================================
+Metrics for only_ego knife_001749.jpg:
+ only_ego Current - KLD: 1.7145 | SIM: 0.3010 | NSS: 0.9475
+
+Cumulative only_ego  Averages over 35 samples:
+Average - KLD: 2.0382 | SIM: 0.3782 | NSS: 0.9649
+==================================================
+
+*** End   ******************************************************************************************************************************************************
+
+
+
+--- Start  36  / 123 --------------------------------------------------------------------------------
+Action : sip, Object : bottle image_name : bottle_000341.jpg
+Processing image: Action: sip, Object: bottle, Image path: /root/AGD20K/Seen/testset/egocentric/sip/bottle/bottle_000341.jpg, GT path: /root/AGD20K/Seen/testset/GT/sip/bottle/bottle_000341.png, Image exists: True, GT exists: False
+final points :[[320, 29], [305, 140], [325, 180]]
+parsed dots!!! : [[320, 29], [305, 140], [325, 180]]
+⚠️ Failed to load ground truth image: [Errno 2] No such file or directory: '/root/AGD20K/Seen/testset/GT/sip/bottle/bottle_000341.png'
+⚠️ Failed to load ground truth image: [Errno 2] No such file or directory: '/root/AGD20K/Seen/testset/GT/sip/bottle/bottle_000341.png'
+*** End   ******************************************************************************************************************************************************
+
+
+
+--- Start  37  / 123 --------------------------------------------------------------------------------
+Action : sip, Object : cup image_name : cup_001864.jpg
+Processing image: Action: sip, Object: cup, Image path: /root/AGD20K/Seen/testset/egocentric/sip/cup/cup_001864.jpg, GT path: /root/AGD20K/Seen/testset/GT/sip/cup/cup_001864.png, Image exists: True, GT exists: True
+final points :[[140, 185], [160, 210], [240, 290]]
+parsed dots!!! : [[140, 185], [160, 210], [240, 290]]
+
+==================================================
+Metrics for only_ego cup_001864.jpg:
+ only_ego Current - KLD: 4.8352 | SIM: 0.2784 | NSS: 0.2714
+
+Cumulative only_ego  Averages over 36 samples:
+Average - KLD: 2.1159 | SIM: 0.3755 | NSS: 0.9457
+==================================================
+
+*** End   ******************************************************************************************************************************************************
+
+
+
+--- Start  38  / 123 --------------------------------------------------------------------------------
+Action : sip, Object : wine_glass image_name : wine_glass_003343.jpg
+Processing image: Action: sip, Object: wine_glass, Image path: /root/AGD20K/Seen/testset/egocentric/sip/wine_glass/wine_glass_003343.jpg, GT path: /root/AGD20K/Seen/testset/GT/sip/wine_glass/wine_glass_003343.png, Image exists: True, GT exists: True
+final points :[[408, 345], [410, 270], [410, 210]]
+parsed dots!!! : [[408, 345], [410, 270], [410, 210]]
+
+==================================================
+Metrics for only_ego wine_glass_003343.jpg:
+ only_ego Current - KLD: 6.0922 | SIM: 0.0217 | NSS: -0.4012
+
+Cumulative only_ego  Averages over 37 samples:
+Average - KLD: 2.2234 | SIM: 0.3659 | NSS: 0.9093
+==================================================
+
+*** End   ******************************************************************************************************************************************************
+
+
+
+--- Start  39  / 123 --------------------------------------------------------------------------------
+Action : catch, Object : soccer_ball image_name : soccer_ball_003333.jpg
+Processing image: Action: catch, Object: soccer_ball, Image path: /root/AGD20K/Seen/testset/egocentric/catch/soccer_ball/soccer_ball_003333.jpg, GT path: /root/AGD20K/Seen/testset/GT/catch/soccer_ball/soccer_ball_003333.png, Image exists: True, GT exists: True
+final points :[[290, 185], [210, 270], [400, 270]]
+parsed dots!!! : [[290, 185], [210, 270], [400, 270]]
+
+==================================================
+Metrics for only_ego soccer_ball_003333.jpg:
+ only_ego Current - KLD: 0.6833 | SIM: 0.6414 | NSS: 1.1748
+
+Cumulative only_ego  Averages over 38 samples:
+Average - KLD: 2.1828 | SIM: 0.3732 | NSS: 0.9162
+==================================================
+
+*** End   ******************************************************************************************************************************************************
+
+
+
+--- Start  40  / 123 --------------------------------------------------------------------------------
+Action : catch, Object : frisbee image_name : frisbee_000598.jpg
+Processing image: Action: catch, Object: frisbee, Image path: /root/AGD20K/Seen/testset/egocentric/catch/frisbee/frisbee_000598.jpg, GT path: /root/AGD20K/Seen/testset/GT/catch/frisbee/frisbee_000598.png, Image exists: True, GT exists: True
+final points :[[680, 150], [680, 1350], [250, 700], [1100, 700]]
+parsed dots!!! : [[680, 150], [680, 1350], [250, 700], [1100, 700]]
+
+==================================================
+Metrics for only_ego frisbee_000598.jpg:
+ only_ego Current - KLD: 1.4063 | SIM: 0.4608 | NSS: 0.2052
+
+Cumulative only_ego  Averages over 39 samples:
+Average - KLD: 2.1629 | SIM: 0.3754 | NSS: 0.8980
+==================================================
+
+*** End   ******************************************************************************************************************************************************
+
+
+
+--- Start  41  / 123 --------------------------------------------------------------------------------
+Action : catch, Object : rugby_ball image_name : rugby_ball_003522.jpg
+Processing image: Action: catch, Object: rugby_ball, Image path: /root/AGD20K/Seen/testset/egocentric/catch/rugby_ball/rugby_ball_003522.jpg, GT path: /root/AGD20K/Seen/testset/GT/catch/rugby_ball/rugby_ball_003522.png, Image exists: True, GT exists: True
+final points :[[700, 400], [350, 800], [1100, 800]]
+parsed dots!!! : [[700, 400], [350, 800], [1100, 800]]
+
+==================================================
+Metrics for only_ego rugby_ball_003522.jpg:
+ only_ego Current - KLD: 1.3366 | SIM: 0.4958 | NSS: 0.2273
+
+Cumulative only_ego  Averages over 40 samples:
+Average - KLD: 2.1423 | SIM: 0.3784 | NSS: 0.8812
+==================================================
+
+*** End   ******************************************************************************************************************************************************
+
+
+
+--- Start  42  / 123 --------------------------------------------------------------------------------
+Action : lie_on, Object : couch image_name : couch_003293.jpg
+Processing image: Action: lie_on, Object: couch, Image path: /root/AGD20K/Seen/testset/egocentric/lie_on/couch/couch_003293.jpg, GT path: /root/AGD20K/Seen/testset/GT/lie_on/couch/couch_003293.png, Image exists: True, GT exists: True
+final points :[[140, 250], [360, 280], [480, 350]]
+parsed dots!!! : [[140, 250], [360, 280], [480, 350]]
+
+==================================================
+Metrics for only_ego couch_003293.jpg:
+ only_ego Current - KLD: 0.8396 | SIM: 0.5005 | NSS: 1.3141
+
+Cumulative only_ego  Averages over 41 samples:
+Average - KLD: 2.1105 | SIM: 0.3814 | NSS: 0.8918
+==================================================
+
+*** End   ******************************************************************************************************************************************************
+
+
+
+--- Start  43  / 123 --------------------------------------------------------------------------------
+Action : lie_on, Object : bed image_name : bed_002880.jpg
+Processing image: Action: lie_on, Object: bed, Image path: /root/AGD20K/Seen/testset/egocentric/lie_on/bed/bed_002880.jpg, GT path: /root/AGD20K/Seen/testset/GT/lie_on/bed/bed_002880.png, Image exists: True, GT exists: True
+final points :[[280, 225], [280, 260], [280, 290]]
+parsed dots!!! : [[280, 225], [280, 260], [280, 290]]
+
+==================================================
+Metrics for only_ego bed_002880.jpg:
+ only_ego Current - KLD: 0.6728 | SIM: 0.5443 | NSS: 2.5947
+
+Cumulative only_ego  Averages over 42 samples:
+Average - KLD: 2.0763 | SIM: 0.3853 | NSS: 0.9323
+==================================================
+
+*** End   ******************************************************************************************************************************************************
+
+
+
+--- Start  44  / 123 --------------------------------------------------------------------------------
+Action : lie_on, Object : bench image_name : bench_003727.jpg
+Processing image: Action: lie_on, Object: bench, Image path: /root/AGD20K/Seen/testset/egocentric/lie_on/bench/bench_003727.jpg, GT path: /root/AGD20K/Seen/testset/GT/lie_on/bench/bench_003727.png, Image exists: True, GT exists: True
+final points :[[80, 205], [300, 220], [490, 230]]
+parsed dots!!! : [[80, 205], [300, 220], [490, 230]]
+
+==================================================
+Metrics for only_ego bench_003727.jpg:
+ only_ego Current - KLD: 0.6233 | SIM: 0.5627 | NSS: 1.4940
+
+Cumulative only_ego  Averages over 43 samples:
+Average - KLD: 2.0425 | SIM: 0.3894 | NSS: 0.9454
+==================================================
+
+*** End   ******************************************************************************************************************************************************
+
+
+
+--- Start  45  / 123 --------------------------------------------------------------------------------
+Action : lie_on, Object : surfboard image_name : surfboard_000221.jpg
+Processing image: Action: lie_on, Object: surfboard, Image path: /root/AGD20K/Seen/testset/egocentric/lie_on/surfboard/surfboard_000221.jpg, GT path: /root/AGD20K/Seen/testset/GT/lie_on/surfboard/surfboard_000221.png, Image exists: True, GT exists: True
+final points :[[85, 340], [79, 460], [78, 530]]
+parsed dots!!! : [[85, 340], [79, 460], [78, 530]]
+
+==================================================
+Metrics for only_ego surfboard_000221.jpg:
+ only_ego Current - KLD: 0.3204 | SIM: 0.6765 | NSS: 2.2934
+
+Cumulative only_ego  Averages over 44 samples:
+Average - KLD: 2.0033 | SIM: 0.3959 | NSS: 0.9760
+==================================================
+
+*** End   ******************************************************************************************************************************************************
+
+
+
+--- Start  46  / 123 --------------------------------------------------------------------------------
+Action : open, Object : bottle image_name : bottle_001033.jpg
+Processing image: Action: open, Object: bottle, Image path: /root/AGD20K/Seen/testset/egocentric/open/bottle/bottle_001033.jpg, GT path: /root/AGD20K/Seen/testset/GT/open/bottle/bottle_001033.png, Image exists: True, GT exists: True
+final points :[[164, 30], [195, 30], [180, 70], [164, 30], [195, 30], [180, 70]]
+parsed dots!!! : [[164, 30], [195, 30], [180, 70], [164, 30], [195, 30], [180, 70]]
+
+==================================================
+Metrics for only_ego bottle_001033.jpg:
+ only_ego Current - KLD: 0.4063 | SIM: 0.6362 | NSS: 3.9790
+
+Cumulative only_ego  Averages over 45 samples:
+Average - KLD: 1.9679 | SIM: 0.4013 | NSS: 1.0428
+==================================================
+
+*** End   ******************************************************************************************************************************************************
+
+
+
+--- Start  47  / 123 --------------------------------------------------------------------------------
+Action : open, Object : refrigerator image_name : refrigerator_002162.jpg
+Processing image: Action: open, Object: refrigerator, Image path: /root/AGD20K/Seen/testset/egocentric/open/refrigerator/refrigerator_002162.jpg, GT path: /root/AGD20K/Seen/testset/GT/open/refrigerator/refrigerator_002162.png, Image exists: True, GT exists: True
+final points :[[230, 140], [235, 460], [238, 770], [285, 140], [288, 460], [292, 770]]
+parsed dots!!! : [[230, 140], [235, 460], [238, 770], [285, 140], [288, 460], [292, 770]]
+
+==================================================
+Metrics for only_ego refrigerator_002162.jpg:
+ only_ego Current - KLD: 0.6042 | SIM: 0.5521 | NSS: 1.5504
+
+Cumulative only_ego  Averages over 46 samples:
+Average - KLD: 1.9382 | SIM: 0.4045 | NSS: 1.0538
+==================================================
+
+*** End   ******************************************************************************************************************************************************
+
+
+
+--- Start  48  / 123 --------------------------------------------------------------------------------
+Action : open, Object : oven image_name : oven_001370.jpg
+Processing image: Action: open, Object: oven, Image path: /root/AGD20K/Seen/testset/egocentric/open/oven/oven_001370.jpg, GT path: /root/AGD20K/Seen/testset/GT/open/oven/oven_001370.png, Image exists: True, GT exists: True
+final points :[[700, 180], [1100, 180], [1450, 300]]
+parsed dots!!! : [[700, 180], [1100, 180], [1450, 300]]
+
+==================================================
+Metrics for only_ego oven_001370.jpg:
+ only_ego Current - KLD: 0.4843 | SIM: 0.6056 | NSS: 1.7871
+
+Cumulative only_ego  Averages over 47 samples:
+Average - KLD: 1.9073 | SIM: 0.4088 | NSS: 1.0694
+==================================================
+
+*** End   ******************************************************************************************************************************************************
+
+
+
+--- Start  49  / 123 --------------------------------------------------------------------------------
+Action : open, Object : book image_name : book_003044.jpg
+Processing image: Action: open, Object: book, Image path: /root/AGD20K/Seen/testset/egocentric/open/book/book_003044.jpg, GT path: /root/AGD20K/Seen/testset/GT/open/book/book_003044.png, Image exists: True, GT exists: True
+final points :[[240, 315], [280, 340], [320, 365]]
+parsed dots!!! : [[240, 315], [280, 340], [320, 365]]
+
+==================================================
+Metrics for only_ego book_003044.jpg:
+ only_ego Current - KLD: 1.1211 | SIM: 0.3781 | NSS: 1.8603
+
+Cumulative only_ego  Averages over 48 samples:
+Average - KLD: 1.8909 | SIM: 0.4082 | NSS: 1.0859
+==================================================
+
+*** End   ******************************************************************************************************************************************************
+
+
+
+--- Start  50  / 123 --------------------------------------------------------------------------------
+Action : open, Object : suitcase image_name : suitcase_000520.jpg
+Processing image: Action: open, Object: suitcase, Image path: /root/AGD20K/Seen/testset/egocentric/open/suitcase/suitcase_000520.jpg, GT path: /root/AGD20K/Seen/testset/GT/open/suitcase/suitcase_000520.png, Image exists: True, GT exists: True
+final points :[[520, 210], [1190, 430], [960, 890]]
+parsed dots!!! : [[520, 210], [1190, 430], [960, 890]]
+
+==================================================
+Metrics for only_ego suitcase_000520.jpg:
+ only_ego Current - KLD: 6.8346 | SIM: 0.0539 | NSS: -0.4505
+
+Cumulative only_ego  Averages over 49 samples:
+Average - KLD: 1.9918 | SIM: 0.4009 | NSS: 1.0545
+==================================================
+
+*** End   ******************************************************************************************************************************************************
+
+
+
+--- Start  51  / 123 --------------------------------------------------------------------------------
+Action : open, Object : microwave image_name : microwave_001049.jpg
+Processing image: Action: open, Object: microwave, Image path: /root/AGD20K/Seen/testset/egocentric/open/microwave/microwave_001049.jpg, GT path: /root/AGD20K/Seen/testset/GT/open/microwave/microwave_001049.png, Image exists: True, GT exists: True
+final points :[[300, 150], [350, 140], [300, 480]]
+parsed dots!!! : [[300, 150], [350, 140], [300, 480]]
+
+==================================================
+Metrics for only_ego microwave_001049.jpg:
+ only_ego Current - KLD: 2.3404 | SIM: 0.4012 | NSS: 0.8835
+
+Cumulative only_ego  Averages over 50 samples:
+Average - KLD: 1.9988 | SIM: 0.4009 | NSS: 1.0511
+==================================================
+
+*** End   ******************************************************************************************************************************************************
+
+
+
+--- Start  52  / 123 --------------------------------------------------------------------------------
+Action : text_on, Object : cell_phone image_name : cell_phone_003361.jpg
+Processing image: Action: text_on, Object: cell_phone, Image path: /root/AGD20K/Seen/testset/egocentric/text_on/cell_phone/cell_phone_003361.jpg, GT path: /root/AGD20K/Seen/testset/GT/text_on/cell_phone/cell_phone_003361.png, Image exists: True, GT exists: True
+final points :[[250, 70], [250, 180], [250, 290]]
+parsed dots!!! : [[250, 70], [250, 180], [250, 290]]
+
+==================================================
+Metrics for only_ego cell_phone_003361.jpg:
+ only_ego Current - KLD: 0.7048 | SIM: 0.5071 | NSS: 1.7100
+
+Cumulative only_ego  Averages over 51 samples:
+Average - KLD: 1.9734 | SIM: 0.4030 | NSS: 1.0640
+==================================================
+
+*** End   ******************************************************************************************************************************************************
+
+
+
+--- Start  53  / 123 --------------------------------------------------------------------------------
+Action : boxing, Object : punching_bag image_name : punching_bag_001845.jpg
+Processing image: Action: boxing, Object: punching_bag, Image path: /root/AGD20K/Seen/testset/egocentric/boxing/punching_bag/punching_bag_001845.jpg, GT path: /root/AGD20K/Seen/testset/GT/boxing/punching_bag/punching_bag_001845.png, Image exists: True, GT exists: True
+final points :[[135, 400], [250, 250], [250, 650]]
+parsed dots!!! : [[135, 400], [250, 250], [250, 650]]
+
+==================================================
+Metrics for only_ego punching_bag_001845.jpg:
+ only_ego Current - KLD: 1.3276 | SIM: 0.4939 | NSS: 0.3080
+
+Cumulative only_ego  Averages over 52 samples:
+Average - KLD: 1.9610 | SIM: 0.4048 | NSS: 1.0495
+==================================================
+
+*** End   ******************************************************************************************************************************************************
+
+
+
+--- Start  54  / 123 --------------------------------------------------------------------------------
+Action : stir, Object : bowl image_name : bowl_000134.jpg
+Processing image: Action: stir, Object: bowl, Image path: /root/AGD20K/Seen/testset/egocentric/stir/bowl/bowl_000134.jpg, GT path: /root/AGD20K/Seen/testset/GT/stir/bowl/bowl_000134.png, Image exists: True, GT exists: True
+final points :[[250, 145], [150, 60], [80, 20]]
+parsed dots!!! : [[250, 145], [150, 60], [80, 20]]
+
+==================================================
+Metrics for only_ego bowl_000134.jpg:
+ only_ego Current - KLD: 4.1728 | SIM: 0.2527 | NSS: 0.0836
+
+Cumulative only_ego  Averages over 53 samples:
+Average - KLD: 2.0027 | SIM: 0.4019 | NSS: 1.0313
+==================================================
+
+*** End   ******************************************************************************************************************************************************
+
+
+
+--- Start  55  / 123 --------------------------------------------------------------------------------
+Action : hit, Object : baseball_bat image_name : baseball_bat_001882.jpg
+Processing image: Action: hit, Object: baseball_bat, Image path: /root/AGD20K/Seen/testset/egocentric/hit/baseball_bat/baseball_bat_001882.jpg, GT path: /root/AGD20K/Seen/testset/GT/hit/baseball_bat/baseball_bat_001882.png, Image exists: True, GT exists: True
+final points :[[50, 1180], [350, 700], [1100, 200], [50, 1180], [350, 700], [1100, 200]]
+parsed dots!!! : [[50, 1180], [350, 700], [1100, 200], [50, 1180], [350, 700], [1100, 200]]
+
+==================================================
+Metrics for only_ego baseball_bat_001882.jpg:
+ only_ego Current - KLD: 2.0065 | SIM: 0.2389 | NSS: 0.9267
+
+Cumulative only_ego  Averages over 54 samples:
+Average - KLD: 2.0028 | SIM: 0.3989 | NSS: 1.0293
+==================================================
+
+*** End   ******************************************************************************************************************************************************
+
+
+
+--- Start  56  / 123 --------------------------------------------------------------------------------
+Action : hit, Object : tennis_racket image_name : tennis_racket_002268.jpg
+Processing image: Action: hit, Object: tennis_racket, Image path: /root/AGD20K/Seen/testset/egocentric/hit/tennis_racket/tennis_racket_002268.jpg, GT path: /root/AGD20K/Seen/testset/GT/hit/tennis_racket/tennis_racket_002268.png, Image exists: True, GT exists: True
+final points :[[400, 600], [450, 850], [400, 350], [400, 600], [450, 850], [400, 350]]
+parsed dots!!! : [[400, 600], [450, 850], [400, 350], [400, 600], [450, 850], [400, 350]]
+
+==================================================
+Metrics for only_ego tennis_racket_002268.jpg:
+ only_ego Current - KLD: 1.1800 | SIM: 0.3509 | NSS: 1.9173
+
+Cumulative only_ego  Averages over 55 samples:
+Average - KLD: 1.9878 | SIM: 0.3980 | NSS: 1.0455
+==================================================
+
+*** End   ******************************************************************************************************************************************************
+
+
+
+--- Start  57  / 123 --------------------------------------------------------------------------------
+Action : hit, Object : hammer image_name : hammer_001006.jpg
+Processing image: Action: hit, Object: hammer, Image path: /root/AGD20K/Seen/testset/egocentric/hit/hammer/hammer_001006.jpg, GT path: /root/AGD20K/Seen/testset/GT/hit/hammer/hammer_001006.png, Image exists: True, GT exists: True
+final points :[[405, 60], [380, 150], [350, 220], [290, 270]]
+parsed dots!!! : [[405, 60], [380, 150], [350, 220], [290, 270]]
+
+==================================================
+Metrics for only_ego hammer_001006.jpg:
+ only_ego Current - KLD: 0.8446 | SIM: 0.4551 | NSS: 1.9111
+
+Cumulative only_ego  Averages over 56 samples:
+Average - KLD: 1.9674 | SIM: 0.3990 | NSS: 1.0609
+==================================================
+
+*** End   ******************************************************************************************************************************************************
+
+
+
+--- Start  58  / 123 --------------------------------------------------------------------------------
+Action : hit, Object : axe image_name : axe_000961.jpg
+Processing image: Action: hit, Object: axe, Image path: /root/AGD20K/Seen/testset/egocentric/hit/axe/axe_000961.jpg, GT path: /root/AGD20K/Seen/testset/GT/hit/axe/axe_000961.png, Image exists: True, GT exists: True
+final points :[[600, 540], [700, 650], [800, 780]]
+parsed dots!!! : [[600, 540], [700, 650], [800, 780]]
+
+==================================================
+Metrics for only_ego axe_000961.jpg:
+ only_ego Current - KLD: 0.8902 | SIM: 0.6382 | NSS: 1.6233
+
+Cumulative only_ego  Averages over 57 samples:
+Average - KLD: 1.9485 | SIM: 0.4032 | NSS: 1.0708
+==================================================
+
+*** End   ******************************************************************************************************************************************************
+
+
+
+--- Start  59  / 123 --------------------------------------------------------------------------------
+Action : write, Object : pen image_name : pen_003590.jpg
+Processing image: Action: write, Object: pen, Image path: /root/AGD20K/Seen/testset/egocentric/write/pen/pen_003590.jpg, GT path: /root/AGD20K/Seen/testset/GT/write/pen/pen_003590.png, Image exists: True, GT exists: True
+final points :[[110, 34], [195, 160], [147, 330], [298, 45], [370, 180], [560, 255]]
+parsed dots!!! : [[110, 34], [195, 160], [147, 330], [298, 45], [370, 180], [560, 255]]
+
+==================================================
+Metrics for only_ego pen_003590.jpg:
+ only_ego Current - KLD: 1.7351 | SIM: 0.2406 | NSS: 1.1491
+
+Cumulative only_ego  Averages over 58 samples:
+Average - KLD: 1.9448 | SIM: 0.4004 | NSS: 1.0722
+==================================================
+
+*** End   ******************************************************************************************************************************************************
+
+
+
+--- Start  60  / 123 --------------------------------------------------------------------------------
+Action : take_photo, Object : cell_phone image_name : cell_phone_000601.jpg
+Processing image: Action: take_photo, Object: cell_phone, Image path: /root/AGD20K/Seen/testset/egocentric/take_photo/cell_phone/cell_phone_000601.jpg, GT path: /root/AGD20K/Seen/testset/GT/take_photo/cell_phone/cell_phone_000601.png, Image exists: True, GT exists: True
+final points :[[370, 105], [150, 240], [200, 150]]
+parsed dots!!! : [[370, 105], [150, 240], [200, 150]]
+
+==================================================
+Metrics for only_ego cell_phone_000601.jpg:
+ only_ego Current - KLD: 0.6672 | SIM: 0.5997 | NSS: 1.3160
+
+Cumulative only_ego  Averages over 59 samples:
+Average - KLD: 1.9232 | SIM: 0.4038 | NSS: 1.0763
+==================================================
+
+*** End   ******************************************************************************************************************************************************
+
+
+
+--- Start  61  / 123 --------------------------------------------------------------------------------
+Action : take_photo, Object : camera image_name : camera_002534.jpg
+Processing image: Action: take_photo, Object: camera, Image path: /root/AGD20K/Seen/testset/egocentric/take_photo/camera/camera_002534.jpg, GT path: /root/AGD20K/Seen/testset/GT/take_photo/camera/camera_002534.png, Image exists: True, GT exists: True
+final points :[[85, 147], [100, 260], [350, 250]]
+parsed dots!!! : [[85, 147], [100, 260], [350, 250]]
+
+==================================================
+Metrics for only_ego camera_002534.jpg:
+ only_ego Current - KLD: 0.5969 | SIM: 0.6805 | NSS: 0.7836
+
+Cumulative only_ego  Averages over 60 samples:
+Average - KLD: 1.9011 | SIM: 0.4084 | NSS: 1.0714
+==================================================
+
+*** End   ******************************************************************************************************************************************************
+
+
+
+--- Start  62  / 123 --------------------------------------------------------------------------------
+Action : pour, Object : bottle image_name : bottle_002780.jpg
+Processing image: Action: pour, Object: bottle, Image path: /root/AGD20K/Seen/testset/egocentric/pour/bottle/bottle_002780.jpg, GT path: /root/AGD20K/Seen/testset/GT/pour/bottle/bottle_002780.png, Image exists: True, GT exists: True
+final points :[[350, 180], [460, 270], [250, 150]]
+parsed dots!!! : [[350, 180], [460, 270], [250, 150]]
+
+==================================================
+Metrics for only_ego bottle_002780.jpg:
+ only_ego Current - KLD: 2.6706 | SIM: 0.3315 | NSS: 0.7885
+
+Cumulative only_ego  Averages over 61 samples:
+Average - KLD: 1.9137 | SIM: 0.4072 | NSS: 1.0668
+==================================================
+
+*** End   ******************************************************************************************************************************************************
+
+
+
+--- Start  63  / 123 --------------------------------------------------------------------------------
+Action : pour, Object : cup image_name : cup_001535.jpg
+Processing image: Action: pour, Object: cup, Image path: /root/AGD20K/Seen/testset/egocentric/pour/cup/cup_001535.jpg, GT path: /root/AGD20K/Seen/testset/GT/pour/cup/cup_001535.png, Image exists: True, GT exists: True
+final points :[[340, 75], [460, 85], [390, 110]]
+parsed dots!!! : [[340, 75], [460, 85], [390, 110]]
+
+==================================================
+Metrics for only_ego cup_001535.jpg:
+ only_ego Current - KLD: 3.0262 | SIM: 0.1321 | NSS: 0.2901
+
+Cumulative only_ego  Averages over 62 samples:
+Average - KLD: 1.9316 | SIM: 0.4027 | NSS: 1.0542
+==================================================
+
+*** End   ******************************************************************************************************************************************************
+
+
+
+--- Start  64  / 123 --------------------------------------------------------------------------------
+Action : pour, Object : wine_glass image_name : wine_glass_000186.jpg
+Processing image: Action: pour, Object: wine_glass, Image path: /root/AGD20K/Seen/testset/egocentric/pour/wine_glass/wine_glass_000186.jpg, GT path: /root/AGD20K/Seen/testset/GT/pour/wine_glass/wine_glass_000186.png, Image exists: True, GT exists: True
+final points :[[205, 105], [220, 340], [220, 450]]
+parsed dots!!! : [[205, 105], [220, 340], [220, 450]]
+
+==================================================
+Metrics for only_ego wine_glass_000186.jpg:
+ only_ego Current - KLD: 1.0798 | SIM: 0.4090 | NSS: 1.5680
+
+Cumulative only_ego  Averages over 63 samples:
+Average - KLD: 1.9181 | SIM: 0.4028 | NSS: 1.0624
+==================================================
+
+*** End   ******************************************************************************************************************************************************
+
+
+
+--- Start  65  / 123 --------------------------------------------------------------------------------
+Action : kick, Object : soccer_ball image_name : soccer_ball_001588.jpg
+Processing image: Action: kick, Object: soccer_ball, Image path: /root/AGD20K/Seen/testset/egocentric/kick/soccer_ball/soccer_ball_001588.jpg, GT path: /root/AGD20K/Seen/testset/GT/kick/soccer_ball/soccer_ball_001588.png, Image exists: True, GT exists: True
+final points :[[308, 115], [250, 160], [360, 170]]
+parsed dots!!! : [[308, 115], [250, 160], [360, 170]]
+
+==================================================
+Metrics for only_ego soccer_ball_001588.jpg:
+ only_ego Current - KLD: 0.3188 | SIM: 0.6814 | NSS: 2.3614
+
+Cumulative only_ego  Averages over 64 samples:
+Average - KLD: 1.8931 | SIM: 0.4072 | NSS: 1.0827
+==================================================
+
+*** End   ******************************************************************************************************************************************************
+
+
+
+--- Start  66  / 123 --------------------------------------------------------------------------------
+Action : kick, Object : rugby_ball image_name : rugby_ball_002080.jpg
+Processing image: Action: kick, Object: rugby_ball, Image path: /root/AGD20K/Seen/testset/egocentric/kick/rugby_ball/rugby_ball_002080.jpg, GT path: /root/AGD20K/Seen/testset/GT/kick/rugby_ball/rugby_ball_002080.png, Image exists: True, GT exists: True
+final points :[[140, 95], [70, 110], [210, 110]]
+parsed dots!!! : [[140, 95], [70, 110], [210, 110]]
+
+==================================================
+Metrics for only_ego rugby_ball_002080.jpg:
+ only_ego Current - KLD: 1.5742 | SIM: 0.4962 | NSS: 0.5400
+
+Cumulative only_ego  Averages over 65 samples:
+Average - KLD: 1.8882 | SIM: 0.4085 | NSS: 1.0743
+==================================================
+
+*** End   ******************************************************************************************************************************************************
+
+
+
+--- Start  67  / 123 --------------------------------------------------------------------------------
+Action : kick, Object : punching_bag image_name : punching_bag_001639.jpg
+Processing image: Action: kick, Object: punching_bag, Image path: /root/AGD20K/Seen/testset/egocentric/kick/punching_bag/punching_bag_001639.jpg, GT path: /root/AGD20K/Seen/testset/GT/kick/punching_bag/punching_bag_001639.png, Image exists: True, GT exists: True
+final points :[[150, 700], [150, 450], [150, 950]]
+parsed dots!!! : [[150, 700], [150, 450], [150, 950]]
+
+==================================================
+Metrics for only_ego punching_bag_001639.jpg:
+ only_ego Current - KLD: 2.2193 | SIM: 0.4100 | NSS: 0.1818
+
+Cumulative only_ego  Averages over 66 samples:
+Average - KLD: 1.8932 | SIM: 0.4086 | NSS: 1.0608
+==================================================
+
+*** End   ******************************************************************************************************************************************************
+
+
+
+--- Start  68  / 123 --------------------------------------------------------------------------------
+Action : pick_up, Object : skis image_name : skis_001547.jpg
+Processing image: Action: pick_up, Object: skis, Image path: /root/AGD20K/Seen/testset/egocentric/pick_up/skis/skis_001547.jpg, GT path: /root/AGD20K/Seen/testset/GT/pick_up/skis/skis_001547.png, Image exists: True, GT exists: True
+final points :[[800, 50], [750, 150], [700, 250]]
+parsed dots!!! : [[800, 50], [750, 150], [700, 250]]
+
+==================================================
+Metrics for only_ego skis_001547.jpg:
+ only_ego Current - KLD: 8.9973 | SIM: 0.0045 | NSS: -0.3811
+
+Cumulative only_ego  Averages over 67 samples:
+Average - KLD: 1.9993 | SIM: 0.4025 | NSS: 1.0393
+==================================================
+
+*** End   ******************************************************************************************************************************************************
+
+
+
+--- Start  69  / 123 --------------------------------------------------------------------------------
+Action : pick_up, Object : suitcase image_name : suitcase_002493.jpg
+Processing image: Action: pick_up, Object: suitcase, Image path: /root/AGD20K/Seen/testset/egocentric/pick_up/suitcase/suitcase_002493.jpg, GT path: /root/AGD20K/Seen/testset/GT/pick_up/suitcase/suitcase_002493.png, Image exists: True, GT exists: True
+final points :[[400, 190], [50, 850], [360, 25]]
+parsed dots!!! : [[400, 190], [50, 850], [360, 25]]
+
+==================================================
+Metrics for only_ego suitcase_002493.jpg:
+ only_ego Current - KLD: 0.5956 | SIM: 0.5660 | NSS: 2.9749
+
+Cumulative only_ego  Averages over 68 samples:
+Average - KLD: 1.9786 | SIM: 0.4049 | NSS: 1.0678
+==================================================
+
+*** End   ******************************************************************************************************************************************************
+
+
+
+--- Start  70  / 123 --------------------------------------------------------------------------------
+Action : carry, Object : skis image_name : skis_002829.jpg
+Processing image: Action: carry, Object: skis, Image path: /root/AGD20K/Seen/testset/egocentric/carry/skis/skis_002829.jpg, GT path: /root/AGD20K/Seen/testset/GT/carry/skis/skis_002829.png, Image exists: True, GT exists: True
+final points :[[150, 50], [150, 750], [150, 1350], [390, 50], [390, 750], [390, 1350]]
+parsed dots!!! : [[150, 50], [150, 750], [150, 1350], [390, 50], [390, 750], [390, 1350]]
+
+==================================================
+Metrics for only_ego skis_002829.jpg:
+ only_ego Current - KLD: 1.5112 | SIM: 0.2741 | NSS: 0.9932
+
+Cumulative only_ego  Averages over 69 samples:
+Average - KLD: 1.9718 | SIM: 0.4030 | NSS: 1.0667
+==================================================
+
+*** End   ******************************************************************************************************************************************************
+
+
+
+--- Start  71  / 123 --------------------------------------------------------------------------------
+Action : carry, Object : skateboard image_name : skateboard_002668.jpg
+Processing image: Action: carry, Object: skateboard, Image path: /root/AGD20K/Seen/testset/egocentric/carry/skateboard/skateboard_002668.jpg, GT path: /root/AGD20K/Seen/testset/GT/carry/skateboard/skateboard_002668.png, Image exists: True, GT exists: True
+final points :[[250, 100], [260, 700], [260, 1200]]
+parsed dots!!! : [[250, 100], [260, 700], [260, 1200]]
+
+==================================================
+Metrics for only_ego skateboard_002668.jpg:
+ only_ego Current - KLD: 0.8101 | SIM: 0.6057 | NSS: 0.5261
+
+Cumulative only_ego  Averages over 70 samples:
+Average - KLD: 1.9552 | SIM: 0.4059 | NSS: 1.0590
+==================================================
+
+*** End   ******************************************************************************************************************************************************
+
+
+
+--- Start  72  / 123 --------------------------------------------------------------------------------
+Action : carry, Object : surfboard image_name : surfboard_002422.jpg
+Processing image: Action: carry, Object: surfboard, Image path: /root/AGD20K/Seen/testset/egocentric/carry/surfboard/surfboard_002422.jpg, GT path: /root/AGD20K/Seen/testset/GT/carry/surfboard/surfboard_002422.png, Image exists: True, GT exists: True
+final points :[[235, 100], [40, 700], [420, 800], [235, 1300]]
+parsed dots!!! : [[235, 100], [40, 700], [420, 800], [235, 1300]]
+
+==================================================
+Metrics for only_ego surfboard_002422.jpg:
+ only_ego Current - KLD: 1.5733 | SIM: 0.3025 | NSS: 0.5589
+
+Cumulative only_ego  Averages over 71 samples:
+Average - KLD: 1.9499 | SIM: 0.4045 | NSS: 1.0519
+==================================================
+
+*** End   ******************************************************************************************************************************************************
+
+
+
+--- Start  73  / 123 --------------------------------------------------------------------------------
+Action : carry, Object : snowboard image_name : snowboard_001325.jpg
+Processing image: Action: carry, Object: snowboard, Image path: /root/AGD20K/Seen/testset/egocentric/carry/snowboard/snowboard_001325.jpg, GT path: /root/AGD20K/Seen/testset/GT/carry/snowboard/snowboard_001325.png, Image exists: True, GT exists: True
+final points :[[450, 600], [700, 750], [950, 800]]
+parsed dots!!! : [[450, 600], [700, 750], [950, 800]]
+
+==================================================
+Metrics for only_ego snowboard_001325.jpg:
+ only_ego Current - KLD: 1.0896 | SIM: 0.3769 | NSS: 2.7466
+
+Cumulative only_ego  Averages over 72 samples:
+Average - KLD: 1.9379 | SIM: 0.4041 | NSS: 1.0755
+==================================================
+
+*** End   ******************************************************************************************************************************************************
+
+
+
+--- Start  74  / 123 --------------------------------------------------------------------------------
+Action : stick, Object : fork image_name : fork_000095.jpg
+Processing image: Action: stick, Object: fork, Image path: /root/AGD20K/Seen/testset/egocentric/stick/fork/fork_000095.jpg, GT path: /root/AGD20K/Seen/testset/GT/stick/fork/fork_000095.png, Image exists: True, GT exists: True
+final points :[[400, 650], [380, 750], [290, 850]]
+parsed dots!!! : [[400, 650], [380, 750], [290, 850]]
+
+==================================================
+Metrics for only_ego fork_000095.jpg:
+ only_ego Current - KLD: 0.5419 | SIM: 0.5668 | NSS: 2.1967
+
+Cumulative only_ego  Averages over 73 samples:
+Average - KLD: 1.9188 | SIM: 0.4063 | NSS: 1.0908
+==================================================
+
+*** End   ******************************************************************************************************************************************************
+
+
+
+--- Start  75  / 123 --------------------------------------------------------------------------------
+Action : stick, Object : knife image_name : knife_001072.jpg
+Processing image: Action: stick, Object: knife, Image path: /root/AGD20K/Seen/testset/egocentric/stick/knife/knife_001072.jpg, GT path: /root/AGD20K/Seen/testset/GT/stick/knife/knife_001072.png, Image exists: True, GT exists: True
+final points :[[380, 210], [450, 250], [520, 270]]
+parsed dots!!! : [[380, 210], [450, 250], [520, 270]]
+
+==================================================
+Metrics for only_ego knife_001072.jpg:
+ only_ego Current - KLD: 13.4191 | SIM: 0.0000 | NSS: -0.4768
+
+Cumulative only_ego  Averages over 74 samples:
+Average - KLD: 2.0742 | SIM: 0.4008 | NSS: 1.0696
+==================================================
+
+*** End   ******************************************************************************************************************************************************
+
+
+
+--- Start  76  / 123 --------------------------------------------------------------------------------
+Action : look_out, Object : binoculars image_name : binoculars_003630.jpg
+Processing image: Action: look_out, Object: binoculars, Image path: /root/AGD20K/Seen/testset/egocentric/look_out/binoculars/binoculars_003630.jpg, GT path: /root/AGD20K/Seen/testset/GT/look_out/binoculars/binoculars_003630.png, Image exists: True, GT exists: True
+final points :[[100, 150], [370, 280], [490, 180]]
+parsed dots!!! : [[100, 150], [370, 280], [490, 180]]
+
+==================================================
+Metrics for only_ego binoculars_003630.jpg:
+ only_ego Current - KLD: 2.8976 | SIM: 0.2010 | NSS: -0.0447
+
+Cumulative only_ego  Averages over 75 samples:
+Average - KLD: 2.0852 | SIM: 0.3982 | NSS: 1.0548
+==================================================
+
+*** End   ******************************************************************************************************************************************************
+
+
+
+--- Start  77  / 123 --------------------------------------------------------------------------------
+Action : hold, Object : toothbrush image_name : toothbrush_003341.jpg
+Processing image: Action: hold, Object: toothbrush, Image path: /root/AGD20K/Seen/testset/egocentric/hold/toothbrush/toothbrush_003341.jpg, GT path: /root/AGD20K/Seen/testset/GT/hold/toothbrush/toothbrush_003341.png, Image exists: True, GT exists: True
+final points :[[450, 600], [450, 800], [450, 1000]]
+parsed dots!!! : [[450, 600], [450, 800], [450, 1000]]
+
+==================================================
+Metrics for only_ego toothbrush_003341.jpg:
+ only_ego Current - KLD: 0.4385 | SIM: 0.6151 | NSS: 2.9232
+
+Cumulative only_ego  Averages over 76 samples:
+Average - KLD: 2.0635 | SIM: 0.4010 | NSS: 1.0794
+==================================================
+
+*** End   ******************************************************************************************************************************************************
+
+
+
+--- Start  78  / 123 --------------------------------------------------------------------------------
+Action : hold, Object : baseball_bat image_name : baseball_bat_002547.jpg
+Processing image: Action: hold, Object: baseball_bat, Image path: /root/AGD20K/Seen/testset/egocentric/hold/baseball_bat/baseball_bat_002547.jpg, GT path: /root/AGD20K/Seen/testset/GT/hold/baseball_bat/baseball_bat_002547.png, Image exists: True, GT exists: True
+final points :[[700, 350], [650, 320], [750, 380]]
+parsed dots!!! : [[700, 350], [650, 320], [750, 380]]
+
+==================================================
+Metrics for only_ego baseball_bat_002547.jpg:
+ only_ego Current - KLD: 2.1322 | SIM: 0.2283 | NSS: 1.1567
+
+Cumulative only_ego  Averages over 77 samples:
+Average - KLD: 2.0644 | SIM: 0.3988 | NSS: 1.0804
+==================================================
+
+*** End   ******************************************************************************************************************************************************
+
+
+
+--- Start  79  / 123 --------------------------------------------------------------------------------
+Action : hold, Object : bottle image_name : bottle_001227.jpg
+Processing image: Action: hold, Object: bottle, Image path: /root/AGD20K/Seen/testset/egocentric/hold/bottle/bottle_001227.jpg, GT path: /root/AGD20K/Seen/testset/GT/hold/bottle/bottle_001227.png, Image exists: True, GT exists: True
+final points :[[165, 140], [185, 220], [195, 300]]
+parsed dots!!! : [[165, 140], [185, 220], [195, 300]]
+
+==================================================
+Metrics for only_ego bottle_001227.jpg:
+ only_ego Current - KLD: 0.5989 | SIM: 0.6017 | NSS: 1.8529
+
+Cumulative only_ego  Averages over 78 samples:
+Average - KLD: 2.0456 | SIM: 0.4014 | NSS: 1.0903
+==================================================
+
+*** End   ******************************************************************************************************************************************************
+
+
+
+--- Start  80  / 123 --------------------------------------------------------------------------------
+Action : hold, Object : cup image_name : cup_002518.jpg
+Processing image: Action: hold, Object: cup, Image path: /root/AGD20K/Seen/testset/egocentric/hold/cup/cup_002518.jpg, GT path: /root/AGD20K/Seen/testset/GT/hold/cup/cup_002518.png, Image exists: True, GT exists: True
+final points :[[95, 180], [110, 210], [120, 240]]
+parsed dots!!! : [[95, 180], [110, 210], [120, 240]]
+
+==================================================
+Metrics for only_ego cup_002518.jpg:
+ only_ego Current - KLD: 0.2660 | SIM: 0.7100 | NSS: 3.2217
+
+Cumulative only_ego  Averages over 79 samples:
+Average - KLD: 2.0231 | SIM: 0.4053 | NSS: 1.1172
+==================================================
+
+*** End   ******************************************************************************************************************************************************
+
+
+
+--- Start  81  / 123 --------------------------------------------------------------------------------
+Action : hold, Object : scissors image_name : scissors_002479.jpg
+Processing image: Action: hold, Object: scissors, Image path: /root/AGD20K/Seen/testset/egocentric/hold/scissors/scissors_002479.jpg, GT path: /root/AGD20K/Seen/testset/GT/hold/scissors/scissors_002479.png, Image exists: True, GT exists: True
+final points :[[407, 150], [408, 220], [409, 280]]
+parsed dots!!! : [[407, 150], [408, 220], [409, 280]]
+
+==================================================
+Metrics for only_ego scissors_002479.jpg:
+ only_ego Current - KLD: 1.3193 | SIM: 0.3548 | NSS: 0.9191
+
+Cumulative only_ego  Averages over 80 samples:
+Average - KLD: 2.0143 | SIM: 0.4047 | NSS: 1.1148
+==================================================
+
+*** End   ******************************************************************************************************************************************************
+
+
+
+--- Start  82  / 123 --------------------------------------------------------------------------------
+Action : hold, Object : skis image_name : skis_001357.jpg
+Processing image: Action: hold, Object: skis, Image path: /root/AGD20K/Seen/testset/egocentric/hold/skis/skis_001357.jpg, GT path: /root/AGD20K/Seen/testset/GT/hold/skis/skis_001357.png, Image exists: True, GT exists: True
+final points :[[10, 425], [467, 80], [200, 250]]
+parsed dots!!! : [[10, 425], [467, 80], [200, 250]]
+
+==================================================
+Metrics for only_ego skis_001357.jpg:
+ only_ego Current - KLD: 1.3637 | SIM: 0.3103 | NSS: 1.7094
+
+Cumulative only_ego  Averages over 81 samples:
+Average - KLD: 2.0063 | SIM: 0.4035 | NSS: 1.1221
+==================================================
+
+*** End   ******************************************************************************************************************************************************
+
+
+
+--- Start  83  / 123 --------------------------------------------------------------------------------
+Action : hold, Object : tennis_racket image_name : tennis_racket_001785.jpg
+Processing image: Action: hold, Object: tennis_racket, Image path: /root/AGD20K/Seen/testset/egocentric/hold/tennis_racket/tennis_racket_001785.jpg, GT path: /root/AGD20K/Seen/testset/GT/hold/tennis_racket/tennis_racket_001785.png, Image exists: True, GT exists: True
+final points :[[400, 750], [480, 650], [550, 550]]
+parsed dots!!! : [[400, 750], [480, 650], [550, 550]]
+
+==================================================
+Metrics for only_ego tennis_racket_001785.jpg:
+ only_ego Current - KLD: 0.6035 | SIM: 0.5407 | NSS: 3.0846
+
+Cumulative only_ego  Averages over 82 samples:
+Average - KLD: 1.9891 | SIM: 0.4052 | NSS: 1.1460
+==================================================
+
+*** End   ******************************************************************************************************************************************************
+
+
+
+--- Start  84  / 123 --------------------------------------------------------------------------------
+Action : hold, Object : book image_name : book_001195.jpg
+Processing image: Action: hold, Object: book, Image path: /root/AGD20K/Seen/testset/egocentric/hold/book/book_001195.jpg, GT path: /root/AGD20K/Seen/testset/GT/hold/book/book_001195.png, Image exists: True, GT exists: True
+final points :[[20, 140], [50, 300], [600, 300]]
+parsed dots!!! : [[20, 140], [50, 300], [600, 300]]
+
+==================================================
+Metrics for only_ego book_001195.jpg:
+ only_ego Current - KLD: 2.2482 | SIM: 0.3742 | NSS: 0.5386
+
+Cumulative only_ego  Averages over 83 samples:
+Average - KLD: 1.9923 | SIM: 0.4048 | NSS: 1.1387
+==================================================
+
+*** End   ******************************************************************************************************************************************************
+
+
+
+--- Start  85  / 123 --------------------------------------------------------------------------------
+Action : hold, Object : frisbee image_name : frisbee_001130.jpg
+Processing image: Action: hold, Object: frisbee, Image path: /root/AGD20K/Seen/testset/egocentric/hold/frisbee/frisbee_001130.jpg, GT path: /root/AGD20K/Seen/testset/GT/hold/frisbee/frisbee_001130.png, Image exists: True, GT exists: True
+final points :[[100, 750], [740, 1400], [1380, 750]]
+parsed dots!!! : [[100, 750], [740, 1400], [1380, 750]]
+
+==================================================
+Metrics for only_ego frisbee_001130.jpg:
+ only_ego Current - KLD: 2.8432 | SIM: 0.4160 | NSS: 0.3376
+
+Cumulative only_ego  Averages over 84 samples:
+Average - KLD: 2.0024 | SIM: 0.4049 | NSS: 1.1292
+==================================================
+
+*** End   ******************************************************************************************************************************************************
+
+
+
+--- Start  86  / 123 --------------------------------------------------------------------------------
+Action : hold, Object : golf_clubs image_name : golf_clubs_000045.jpg
+Processing image: Action: hold, Object: golf_clubs, Image path: /root/AGD20K/Seen/testset/egocentric/hold/golf_clubs/golf_clubs_000045.jpg, GT path: /root/AGD20K/Seen/testset/GT/hold/golf_clubs/golf_clubs_000045.png, Image exists: True, GT exists: True
+final points :[[150, 480], [150, 350], [150, 220]]
+parsed dots!!! : [[150, 480], [150, 350], [150, 220]]
+
+==================================================
+Metrics for only_ego golf_clubs_000045.jpg:
+ only_ego Current - KLD: 2.2267 | SIM: 0.2582 | NSS: 0.8071
+
+Cumulative only_ego  Averages over 85 samples:
+Average - KLD: 2.0050 | SIM: 0.4032 | NSS: 1.1254
+==================================================
+
+*** End   ******************************************************************************************************************************************************
+
+
+
+--- Start  87  / 123 --------------------------------------------------------------------------------
+Action : hold, Object : hammer image_name : hammer_000215.jpg
+Processing image: Action: hold, Object: hammer, Image path: /root/AGD20K/Seen/testset/egocentric/hold/hammer/hammer_000215.jpg, GT path: /root/AGD20K/Seen/testset/GT/hold/hammer/hammer_000215.png, Image exists: True, GT exists: True
+final points :[[100, 40], [200, 120], [280, 170]]
+parsed dots!!! : [[100, 40], [200, 120], [280, 170]]
+
+==================================================
+Metrics for only_ego hammer_000215.jpg:
+ only_ego Current - KLD: 1.1850 | SIM: 0.3445 | NSS: 1.9669
+
+Cumulative only_ego  Averages over 86 samples:
+Average - KLD: 1.9955 | SIM: 0.4025 | NSS: 1.1352
+==================================================
+
+*** End   ******************************************************************************************************************************************************
+
+
+
+--- Start  88  / 123 --------------------------------------------------------------------------------
+Action : hold, Object : fork image_name : fork_000804.jpg
+Processing image: Action: hold, Object: fork, Image path: /root/AGD20K/Seen/testset/egocentric/hold/fork/fork_000804.jpg, GT path: /root/AGD20K/Seen/testset/GT/hold/fork/fork_000804.png, Image exists: True, GT exists: True
+final points :[[100, 1400], [350, 1100], [600, 700]]
+parsed dots!!! : [[100, 1400], [350, 1100], [600, 700]]
+
+==================================================
+Metrics for only_ego fork_000804.jpg:
+ only_ego Current - KLD: 0.5257 | SIM: 0.5846 | NSS: 1.9334
+
+Cumulative only_ego  Averages over 87 samples:
+Average - KLD: 1.9786 | SIM: 0.4046 | NSS: 1.1444
+==================================================
+
+*** End   ******************************************************************************************************************************************************
+
+
+
+--- Start  89  / 123 --------------------------------------------------------------------------------
+Action : hold, Object : badminton_racket image_name : badminton_racket_002255.jpg
+Processing image: Action: hold, Object: badminton_racket, Image path: /root/AGD20K/Seen/testset/egocentric/hold/badminton_racket/badminton_racket_002255.jpg, GT path: /root/AGD20K/Seen/testset/GT/hold/badminton_racket/badminton_racket_002255.png, Image exists: True, GT exists: True
+final points :[[150, 760], [150, 850], [150, 940], [370, 760], [370, 850], [370, 940]]
+parsed dots!!! : [[150, 760], [150, 850], [150, 940], [370, 760], [370, 850], [370, 940]]
+
+==================================================
+Metrics for only_ego badminton_racket_002255.jpg:
+ only_ego Current - KLD: 0.3571 | SIM: 0.6549 | NSS: 2.4390
+
+Cumulative only_ego  Averages over 88 samples:
+Average - KLD: 1.9602 | SIM: 0.4075 | NSS: 1.1591
+==================================================
+
+*** End   ******************************************************************************************************************************************************
+
+
+
+--- Start  90  / 123 --------------------------------------------------------------------------------
+Action : hold, Object : suitcase image_name : suitcase_003687.jpg
+Processing image: Action: hold, Object: suitcase, Image path: /root/AGD20K/Seen/testset/egocentric/hold/suitcase/suitcase_003687.jpg, GT path: /root/AGD20K/Seen/testset/GT/hold/suitcase/suitcase_003687.png, Image exists: True, GT exists: True
+final points :[[250, 46], [25, 700], [690, 700]]
+parsed dots!!! : [[250, 46], [25, 700], [690, 700]]
+
+==================================================
+Metrics for only_ego suitcase_003687.jpg:
+ only_ego Current - KLD: 2.7908 | SIM: 0.2436 | NSS: 1.0321
+
+Cumulative only_ego  Averages over 89 samples:
+Average - KLD: 1.9695 | SIM: 0.4056 | NSS: 1.1576
+==================================================
+
+*** End   ******************************************************************************************************************************************************
+
+
+
+--- Start  91  / 123 --------------------------------------------------------------------------------
+Action : hold, Object : wine_glass image_name : wine_glass_002374.jpg
+Processing image: Action: hold, Object: wine_glass, Image path: /root/AGD20K/Seen/testset/egocentric/hold/wine_glass/wine_glass_002374.jpg, GT path: /root/AGD20K/Seen/testset/GT/hold/wine_glass/wine_glass_002374.png, Image exists: True, GT exists: True
+final points :[[240, 450], [240, 500], [240, 550]]
+parsed dots!!! : [[240, 450], [240, 500], [240, 550]]
+
+==================================================
+Metrics for only_ego wine_glass_002374.jpg:
+ only_ego Current - KLD: 1.8117 | SIM: 0.3915 | NSS: 1.2390
+
+Cumulative only_ego  Averages over 90 samples:
+Average - KLD: 1.9678 | SIM: 0.4055 | NSS: 1.1585
+==================================================
+
+*** End   ******************************************************************************************************************************************************
+
+
+
+--- Start  92  / 123 --------------------------------------------------------------------------------
+Action : hold, Object : skateboard image_name : skateboard_002387.jpg
+Processing image: Action: hold, Object: skateboard, Image path: /root/AGD20K/Seen/testset/egocentric/hold/skateboard/skateboard_002387.jpg, GT path: /root/AGD20K/Seen/testset/GT/hold/skateboard/skateboard_002387.png, Image exists: True, GT exists: True
+final points :[[490, 358], [100, 470], [900, 500]]
+parsed dots!!! : [[490, 358], [100, 470], [900, 500]]
+
+==================================================
+Metrics for only_ego skateboard_002387.jpg:
+ only_ego Current - KLD: 3.6086 | SIM: 0.4207 | NSS: 0.5185
+
+Cumulative only_ego  Averages over 91 samples:
+Average - KLD: 1.9858 | SIM: 0.4056 | NSS: 1.1515
+==================================================
+
+*** End   ******************************************************************************************************************************************************
+
+
+
+--- Start  93  / 123 --------------------------------------------------------------------------------
+Action : hold, Object : axe image_name : axe_001552.jpg
+Processing image: Action: hold, Object: axe, Image path: /root/AGD20K/Seen/testset/egocentric/hold/axe/axe_001552.jpg, GT path: /root/AGD20K/Seen/testset/GT/hold/axe/axe_001552.png, Image exists: True, GT exists: True
+final points :[[1080, 450], [850, 650], [600, 850]]
+parsed dots!!! : [[1080, 450], [850, 650], [600, 850]]
+
+==================================================
+Metrics for only_ego axe_001552.jpg:
+ only_ego Current - KLD: 0.4717 | SIM: 0.5990 | NSS: 2.5032
+
+Cumulative only_ego  Averages over 92 samples:
+Average - KLD: 1.9693 | SIM: 0.4077 | NSS: 1.1662
+==================================================
+
+*** End   ******************************************************************************************************************************************************
+
+
+
+--- Start  94  / 123 --------------------------------------------------------------------------------
+Action : hold, Object : surfboard image_name : surfboard_002631.jpg
+Processing image: Action: hold, Object: surfboard, Image path: /root/AGD20K/Seen/testset/egocentric/hold/surfboard/surfboard_002631.jpg, GT path: /root/AGD20K/Seen/testset/GT/hold/surfboard/surfboard_002631.png, Image exists: True, GT exists: True
+final points :[[185, 190], [260, 240], [470, 270]]
+parsed dots!!! : [[185, 190], [260, 240], [470, 270]]
+
+==================================================
+Metrics for only_ego surfboard_002631.jpg:
+ only_ego Current - KLD: 1.4621 | SIM: 0.3002 | NSS: 1.6106
+
+Cumulative only_ego  Averages over 93 samples:
+Average - KLD: 1.9639 | SIM: 0.4066 | NSS: 1.1710
+==================================================
+
+*** End   ******************************************************************************************************************************************************
+
+
+
+--- Start  95  / 123 --------------------------------------------------------------------------------
+Action : hold, Object : snowboard image_name : snowboard_001704.jpg
+Processing image: Action: hold, Object: snowboard, Image path: /root/AGD20K/Seen/testset/egocentric/hold/snowboard/snowboard_001704.jpg, GT path: /root/AGD20K/Seen/testset/GT/hold/snowboard/snowboard_001704.png, Image exists: True, GT exists: True
+final points :[[50, 50], [140, 750], [50, 1400], [360, 50], [450, 750], [360, 1400]]
+parsed dots!!! : [[50, 50], [140, 750], [50, 1400], [360, 50], [450, 750], [360, 1400]]
+
+==================================================
+Metrics for only_ego snowboard_001704.jpg:
+ only_ego Current - KLD: 1.0121 | SIM: 0.3812 | NSS: 0.9062
+
+Cumulative only_ego  Averages over 94 samples:
+Average - KLD: 1.9538 | SIM: 0.4063 | NSS: 1.1682
+==================================================
+
+*** End   ******************************************************************************************************************************************************
+
+
+
+--- Start  96  / 123 --------------------------------------------------------------------------------
+Action : hold, Object : bowl image_name : bowl_000546.jpg
+Processing image: Action: hold, Object: bowl, Image path: /root/AGD20K/Seen/testset/egocentric/hold/bowl/bowl_000546.jpg, GT path: /root/AGD20K/Seen/testset/GT/hold/bowl/bowl_000546.png, Image exists: True, GT exists: True
+final points :[[20, 20], [10, 40], [30, 30], [70, 20], [60, 40], [80, 30], [10, 70], [0, 90], [20, 80], [70, 70], [60, 90], [80, 80]]
+parsed dots!!! : [[20, 20], [10, 40], [30, 30], [70, 20], [60, 40], [80, 30], [10, 70], [0, 90], [20, 80], [70, 70], [60, 90], [80, 80]]
+
+==================================================
+Metrics for only_ego bowl_000546.jpg:
+ only_ego Current - KLD: 2.3107 | SIM: 0.3412 | NSS: -0.0884
+
+Cumulative only_ego  Averages over 95 samples:
+Average - KLD: 1.9575 | SIM: 0.4056 | NSS: 1.1549
+==================================================
+
+*** End   ******************************************************************************************************************************************************
+
+
+
+--- Start  97  / 123 --------------------------------------------------------------------------------
+Action : hold, Object : knife image_name : knife_002682.jpg
+Processing image: Action: hold, Object: knife, Image path: /root/AGD20K/Seen/testset/egocentric/hold/knife/knife_002682.jpg, GT path: /root/AGD20K/Seen/testset/GT/hold/knife/knife_002682.png, Image exists: True, GT exists: True
+final points :[[540, 238], [570, 270], [600, 300]]
+parsed dots!!! : [[540, 238], [570, 270], [600, 300]]
+
+==================================================
+Metrics for only_ego knife_002682.jpg:
+ only_ego Current - KLD: 0.4059 | SIM: 0.6376 | NSS: 3.4814
+
+Cumulative only_ego  Averages over 96 samples:
+Average - KLD: 1.9414 | SIM: 0.4080 | NSS: 1.1792
+==================================================
+
+*** End   ******************************************************************************************************************************************************
+
+
+
+--- Start  98  / 123 --------------------------------------------------------------------------------
+Action : drink_with, Object : bottle image_name : bottle_003259.jpg
+Processing image: Action: drink_with, Object: bottle, Image path: /root/AGD20K/Seen/testset/egocentric/drink_with/bottle/bottle_003259.jpg, GT path: /root/AGD20K/Seen/testset/GT/drink_with/bottle/bottle_003259.png, Image exists: True, GT exists: True
+final points :[[145, 100], [175, 180], [200, 250]]
+parsed dots!!! : [[145, 100], [175, 180], [200, 250]]
+
+==================================================
+Metrics for only_ego bottle_003259.jpg:
+ only_ego Current - KLD: 1.8272 | SIM: 0.2387 | NSS: 1.3707
+
+Cumulative only_ego  Averages over 97 samples:
+Average - KLD: 1.9402 | SIM: 0.4063 | NSS: 1.1812
+==================================================
+
+*** End   ******************************************************************************************************************************************************
+
+
+
+--- Start  99  / 123 --------------------------------------------------------------------------------
+Action : drink_with, Object : cup image_name : cup_000508.jpg
+Processing image: Action: drink_with, Object: cup, Image path: /root/AGD20K/Seen/testset/egocentric/drink_with/cup/cup_000508.jpg, GT path: /root/AGD20K/Seen/testset/GT/drink_with/cup/cup_000508.png, Image exists: True, GT exists: True
+final points :[[450, 260], [450, 290], [450, 320], [370, 230], [320, 230]]
+parsed dots!!! : [[450, 260], [450, 290], [450, 320], [370, 230], [320, 230]]
+
+==================================================
+Metrics for only_ego cup_000508.jpg:
+ only_ego Current - KLD: 0.8969 | SIM: 0.4334 | NSS: 2.1970
+
+Cumulative only_ego  Averages over 98 samples:
+Average - KLD: 1.9295 | SIM: 0.4066 | NSS: 1.1915
+==================================================
+
+*** End   ******************************************************************************************************************************************************
+
+
+
+--- Start  100  / 123 --------------------------------------------------------------------------------
+Action : drink_with, Object : wine_glass image_name : wine_glass_003343.jpg
+Processing image: Action: drink_with, Object: wine_glass, Image path: /root/AGD20K/Seen/testset/egocentric/drink_with/wine_glass/wine_glass_003343.jpg, GT path: /root/AGD20K/Seen/testset/GT/drink_with/wine_glass/wine_glass_003343.png, Image exists: True, GT exists: True
+final points :[[408, 350], [410, 270], [412, 210]]
+parsed dots!!! : [[408, 350], [410, 270], [412, 210]]
+
+==================================================
+Metrics for only_ego wine_glass_003343.jpg:
+ only_ego Current - KLD: 6.0841 | SIM: 0.0218 | NSS: -0.4046
+
+Cumulative only_ego  Averages over 99 samples:
+Average - KLD: 1.9715 | SIM: 0.4027 | NSS: 1.1754
+==================================================
+
+*** End   ******************************************************************************************************************************************************
+
+
+
+--- Start  101  / 123 --------------------------------------------------------------------------------
+Action : brush_with, Object : toothbrush image_name : toothbrush_001764.jpg
+Processing image: Action: brush_with, Object: toothbrush, Image path: /root/AGD20K/Seen/testset/egocentric/brush_with/toothbrush/toothbrush_001764.jpg, GT path: /root/AGD20K/Seen/testset/GT/brush_with/toothbrush/toothbrush_001764.png, Image exists: True, GT exists: True
+final points :[[480, 950], [480, 840], [480, 1070]]
+parsed dots!!! : [[480, 950], [480, 840], [480, 1070]]
+
+==================================================
+Metrics for only_ego toothbrush_001764.jpg:
+ only_ego Current - KLD: 11.7945 | SIM: 0.0000 | NSS: -0.4173
+
+Cumulative only_ego  Averages over 100 samples:
+Average - KLD: 2.0697 | SIM: 0.3987 | NSS: 1.1595
+==================================================
+
+*** End   ******************************************************************************************************************************************************
+
+
+
+--- Start  102  / 123 --------------------------------------------------------------------------------
+Action : throw, Object : soccer_ball image_name : soccer_ball_003436.jpg
+Processing image: Action: throw, Object: soccer_ball, Image path: /root/AGD20K/Seen/testset/egocentric/throw/soccer_ball/soccer_ball_003436.jpg, GT path: /root/AGD20K/Seen/testset/GT/throw/soccer_ball/soccer_ball_003436.png, Image exists: True, GT exists: False
+final points :[[260, 145], [200, 250], [320, 280]]
+parsed dots!!! : [[260, 145], [200, 250], [320, 280]]
+⚠️ Failed to load ground truth image: [Errno 2] No such file or directory: '/root/AGD20K/Seen/testset/GT/throw/soccer_ball/soccer_ball_003436.png'
+⚠️ Failed to load ground truth image: [Errno 2] No such file or directory: '/root/AGD20K/Seen/testset/GT/throw/soccer_ball/soccer_ball_003436.png'
+*** End   ******************************************************************************************************************************************************
+
+
+
+--- Start  103  / 123 --------------------------------------------------------------------------------
+Action : throw, Object : javelin image_name : javelin_001474.jpg
+Processing image: Action: throw, Object: javelin, Image path: /root/AGD20K/Seen/testset/egocentric/throw/javelin/javelin_001474.jpg, GT path: /root/AGD20K/Seen/testset/GT/throw/javelin/javelin_001474.png, Image exists: True, GT exists: True
+final points :[[570, 365], [650, 420], [700, 480]]
+parsed dots!!! : [[570, 365], [650, 420], [700, 480]]
+
+==================================================
+Metrics for only_ego javelin_001474.jpg:
+ only_ego Current - KLD: 0.5750 | SIM: 0.5552 | NSS: 3.8039
+
+Cumulative only_ego  Averages over 101 samples:
+Average - KLD: 2.0549 | SIM: 0.4002 | NSS: 1.1856
+==================================================
+
+*** End   ******************************************************************************************************************************************************
+
+
+
+--- Start  104  / 123 --------------------------------------------------------------------------------
+Action : throw, Object : frisbee image_name : frisbee_003249.jpg
+Processing image: Action: throw, Object: frisbee, Image path: /root/AGD20K/Seen/testset/egocentric/throw/frisbee/frisbee_003249.jpg, GT path: /root/AGD20K/Seen/testset/GT/throw/frisbee/frisbee_003249.png, Image exists: True, GT exists: True
+final points :[[600, 250], [350, 700], [850, 950]]
+parsed dots!!! : [[600, 250], [350, 700], [850, 950]]
+
+==================================================
+Metrics for only_ego frisbee_003249.jpg:
+ only_ego Current - KLD: 1.6542 | SIM: 0.4824 | NSS: 0.4480
+
+Cumulative only_ego  Averages over 102 samples:
+Average - KLD: 2.0510 | SIM: 0.4010 | NSS: 1.1784
+==================================================
+
+*** End   ******************************************************************************************************************************************************
+
+
+
+--- Start  105  / 123 --------------------------------------------------------------------------------
+Action : throw, Object : discus image_name : discus_003558.jpg
+Processing image: Action: throw, Object: discus, Image path: /root/AGD20K/Seen/testset/egocentric/throw/discus/discus_003558.jpg, GT path: /root/AGD20K/Seen/testset/GT/throw/discus/discus_003558.png, Image exists: True, GT exists: True
+final points :[[220, 225], [340, 200], [100, 250]]
+parsed dots!!! : [[220, 225], [340, 200], [100, 250]]
+
+==================================================
+Metrics for only_ego discus_003558.jpg:
+ only_ego Current - KLD: 1.2734 | SIM: 0.4825 | NSS: 0.5911
+
+Cumulative only_ego  Averages over 103 samples:
+Average - KLD: 2.0434 | SIM: 0.4018 | NSS: 1.1727
+==================================================
+
+*** End   ******************************************************************************************************************************************************
+
+
+
+--- Start  106  / 123 --------------------------------------------------------------------------------
+Action : throw, Object : rugby_ball image_name : rugby_ball_000001.jpg
+Processing image: Action: throw, Object: rugby_ball, Image path: /root/AGD20K/Seen/testset/egocentric/throw/rugby_ball/rugby_ball_000001.jpg, GT path: /root/AGD20K/Seen/testset/GT/throw/rugby_ball/rugby_ball_000001.png, Image exists: True, GT exists: True
+final points :[[350, 600], [490, 700], [630, 600], [350, 600], [490, 700], [630, 600]]
+parsed dots!!! : [[350, 600], [490, 700], [630, 600], [350, 600], [490, 700], [630, 600]]
+
+==================================================
+Metrics for only_ego rugby_ball_000001.jpg:
+ only_ego Current - KLD: 0.6460 | SIM: 0.6686 | NSS: 0.7386
+
+Cumulative only_ego  Averages over 104 samples:
+Average - KLD: 2.0300 | SIM: 0.4044 | NSS: 1.1685
+==================================================
+
+*** End   ******************************************************************************************************************************************************
+
+
+
+--- Start  107  / 123 --------------------------------------------------------------------------------
+Action : throw, Object : baseball image_name : baseball_002670.jpg
+Processing image: Action: throw, Object: baseball, Image path: /root/AGD20K/Seen/testset/egocentric/throw/baseball/baseball_002670.jpg, GT path: /root/AGD20K/Seen/testset/GT/throw/baseball/baseball_002670.png, Image exists: True, GT exists: True
+final points :[[305, 165], [340, 190], [370, 205]]
+parsed dots!!! : [[305, 165], [340, 190], [370, 205]]
+
+==================================================
+Metrics for only_ego baseball_002670.jpg:
+ only_ego Current - KLD: 0.4349 | SIM: 0.6179 | NSS: 3.5151
+
+Cumulative only_ego  Averages over 105 samples:
+Average - KLD: 2.0148 | SIM: 0.4064 | NSS: 1.1909
+==================================================
+
+*** End   ******************************************************************************************************************************************************
+
+
+
+--- Start  108  / 123 --------------------------------------------------------------------------------
+Action : throw, Object : basketball image_name : basketball_003534.jpg
+Processing image: Action: throw, Object: basketball, Image path: /root/AGD20K/Seen/testset/egocentric/throw/basketball/basketball_003534.jpg, GT path: /root/AGD20K/Seen/testset/GT/throw/basketball/basketball_003534.png, Image exists: True, GT exists: True
+final points :[[490, 250], [430, 320], [560, 320]]
+parsed dots!!! : [[490, 250], [430, 320], [560, 320]]
+
+==================================================
+Metrics for only_ego basketball_003534.jpg:
+ only_ego Current - KLD: 0.3975 | SIM: 0.6359 | NSS: 3.4692
+
+Cumulative only_ego  Averages over 106 samples:
+Average - KLD: 1.9996 | SIM: 0.4086 | NSS: 1.2124
+==================================================
+
+*** End   ******************************************************************************************************************************************************
+
+
+
+--- Start  109  / 123 --------------------------------------------------------------------------------
+Action : beat, Object : drum image_name : drum_002586.jpg
+Processing image: Action: beat, Object: drum, Image path: /root/AGD20K/Seen/testset/egocentric/beat/drum/drum_002586.jpg, GT path: /root/AGD20K/Seen/testset/GT/beat/drum/drum_002586.png, Image exists: True, GT exists: True
+final points :[[10, 150], [320, 150], [620, 150]]
+parsed dots!!! : [[10, 150], [320, 150], [620, 150]]
+
+==================================================
+Metrics for only_ego drum_002586.jpg:
+ only_ego Current - KLD: 0.8329 | SIM: 0.5687 | NSS: 0.7061
+
+Cumulative only_ego  Averages over 107 samples:
+Average - KLD: 1.9887 | SIM: 0.4101 | NSS: 1.2076
+==================================================
+
+*** End   ******************************************************************************************************************************************************
+
+
+
+--- Start  110  / 123 --------------------------------------------------------------------------------
+Action : lift, Object : fork image_name : fork_001691.jpg
+Processing image: Action: lift, Object: fork, Image path: /root/AGD20K/Seen/testset/egocentric/lift/fork/fork_001691.jpg, GT path: /root/AGD20K/Seen/testset/GT/lift/fork/fork_001691.png, Image exists: True, GT exists: True
+final points :[[650, 700], [500, 550], [350, 400]]
+parsed dots!!! : [[650, 700], [500, 550], [350, 400]]
+
+==================================================
+Metrics for only_ego fork_001691.jpg:
+ only_ego Current - KLD: 0.8578 | SIM: 0.5347 | NSS: 1.6166
+
+Cumulative only_ego  Averages over 108 samples:
+Average - KLD: 1.9782 | SIM: 0.4112 | NSS: 1.2114
+==================================================
+
+*** End   ******************************************************************************************************************************************************
+
+
+
+--- Start  111  / 123 --------------------------------------------------------------------------------
+Action : talk_on, Object : cell_phone image_name : cell_phone_000601.jpg
+Processing image: Action: talk_on, Object: cell_phone, Image path: /root/AGD20K/Seen/testset/egocentric/talk_on/cell_phone/cell_phone_000601.jpg, GT path: /root/AGD20K/Seen/testset/GT/talk_on/cell_phone/cell_phone_000601.png, Image exists: True, GT exists: True
+final points :[[150, 100], [200, 200], [180, 280]]
+parsed dots!!! : [[150, 100], [200, 200], [180, 280]]
+
+==================================================
+Metrics for only_ego cell_phone_000601.jpg:
+ only_ego Current - KLD: 3.1272 | SIM: 0.3500 | NSS: 0.7010
+
+Cumulative only_ego  Averages over 109 samples:
+Average - KLD: 1.9887 | SIM: 0.4107 | NSS: 1.2068
+==================================================
+
+*** End   ******************************************************************************************************************************************************
+
+
+
+--- Start  112  / 123 --------------------------------------------------------------------------------
+Action : push, Object : bicycle image_name : bicycle_002432.jpg
+Processing image: Action: push, Object: bicycle, Image path: /root/AGD20K/Seen/testset/egocentric/push/bicycle/bicycle_002432.jpg, GT path: /root/AGD20K/Seen/testset/GT/push/bicycle/bicycle_002432.png, Image exists: True, GT exists: True
+final points :[[405, 80], [220, 160], [390, 250]]
+parsed dots!!! : [[405, 80], [220, 160], [390, 250]]
+
+==================================================
+Metrics for only_ego bicycle_002432.jpg:
+ only_ego Current - KLD: 1.7506 | SIM: 0.2473 | NSS: 1.1469
+
+Cumulative only_ego  Averages over 110 samples:
+Average - KLD: 1.9866 | SIM: 0.4092 | NSS: 1.2062
+==================================================
+
+*** End   ******************************************************************************************************************************************************
+
+
+
+--- Start  113  / 123 --------------------------------------------------------------------------------
+Action : push, Object : motorcycle image_name : motorcycle_003541.jpg
+Processing image: Action: push, Object: motorcycle, Image path: /root/AGD20K/Seen/testset/egocentric/push/motorcycle/motorcycle_003541.jpg, GT path: /root/AGD20K/Seen/testset/GT/push/motorcycle/motorcycle_003541.png, Image exists: True, GT exists: True
+final points :[[120, 205], [178, 230], [245, 265]]
+parsed dots!!! : [[120, 205], [178, 230], [245, 265]]
+
+==================================================
+Metrics for only_ego motorcycle_003541.jpg:
+ only_ego Current - KLD: 0.6859 | SIM: 0.5645 | NSS: 2.3721
+
+Cumulative only_ego  Averages over 111 samples:
+Average - KLD: 1.9748 | SIM: 0.4106 | NSS: 1.2167
+==================================================
+
+*** End   ******************************************************************************************************************************************************
+
+
+
+--- Start  114  / 123 --------------------------------------------------------------------------------
+Action : eat, Object : hot_dog image_name : hot_dog_002166.jpg
+Processing image: Action: eat, Object: hot_dog, Image path: /root/AGD20K/Seen/testset/egocentric/eat/hot_dog/hot_dog_002166.jpg, GT path: /root/AGD20K/Seen/testset/GT/eat/hot_dog/hot_dog_002166.png, Image exists: True, GT exists: True
+final points :[[20, 50], [210, 200], [380, 300]]
+parsed dots!!! : [[20, 50], [210, 200], [380, 300]]
+
+==================================================
+Metrics for only_ego hot_dog_002166.jpg:
+ only_ego Current - KLD: 0.4862 | SIM: 0.6583 | NSS: 0.8661
+
+Cumulative only_ego  Averages over 112 samples:
+Average - KLD: 1.9616 | SIM: 0.4128 | NSS: 1.2136
+==================================================
+
+*** End   ******************************************************************************************************************************************************
+
+
+
+--- Start  115  / 123 --------------------------------------------------------------------------------
+Action : eat, Object : carrot image_name : carrot_001443.jpg
+Processing image: Action: eat, Object: carrot, Image path: /root/AGD20K/Seen/testset/egocentric/eat/carrot/carrot_001443.jpg, GT path: /root/AGD20K/Seen/testset/GT/eat/carrot/carrot_001443.png, Image exists: True, GT exists: True
+final points :[[240, 156], [200, 175], [110, 210], [280, 110], [290, 130], [350, 75], [380, 120], [330, 160]]
+parsed dots!!! : [[240, 156], [200, 175], [110, 210], [280, 110], [290, 130], [350, 75], [380, 120], [330, 160]]
+
+==================================================
+Metrics for only_ego carrot_001443.jpg:
+ only_ego Current - KLD: 1.4653 | SIM: 0.2830 | NSS: 1.7907
+
+Cumulative only_ego  Averages over 113 samples:
+Average - KLD: 1.9572 | SIM: 0.4116 | NSS: 1.2187
+==================================================
+
+*** End   ******************************************************************************************************************************************************
+
+
+
+--- Start  116  / 123 --------------------------------------------------------------------------------
+Action : eat, Object : orange image_name : orange_001193.jpg
+Processing image: Action: eat, Object: orange, Image path: /root/AGD20K/Seen/testset/egocentric/eat/orange/orange_001193.jpg, GT path: /root/AGD20K/Seen/testset/GT/eat/orange/orange_001193.png, Image exists: True, GT exists: True
+final points :[[280, 175], [340, 250], [390, 310]]
+parsed dots!!! : [[280, 175], [340, 250], [390, 310]]
+
+==================================================
+Metrics for only_ego orange_001193.jpg:
+ only_ego Current - KLD: 1.9108 | SIM: 0.5021 | NSS: 1.1064
+
+Cumulative only_ego  Averages over 114 samples:
+Average - KLD: 1.9568 | SIM: 0.4124 | NSS: 1.2177
+==================================================
+
+*** End   ******************************************************************************************************************************************************
+
+
+
+--- Start  117  / 123 --------------------------------------------------------------------------------
+Action : eat, Object : banana image_name : banana_002458.jpg
+Processing image: Action: eat, Object: banana, Image path: /root/AGD20K/Seen/testset/egocentric/eat/banana/banana_002458.jpg, GT path: /root/AGD20K/Seen/testset/GT/eat/banana/banana_002458.png, Image exists: True, GT exists: True
+final points :[[28, 30], [150, 150], [270, 340]]
+parsed dots!!! : [[28, 30], [150, 150], [270, 340]]
+
+==================================================
+Metrics for only_ego banana_002458.jpg:
+ only_ego Current - KLD: 0.5410 | SIM: 0.6062 | NSS: 1.2728
+
+Cumulative only_ego  Averages over 115 samples:
+Average - KLD: 1.9444 | SIM: 0.4141 | NSS: 1.2182
+==================================================
+
+*** End   ******************************************************************************************************************************************************
+
+
+
+--- Start  118  / 123 --------------------------------------------------------------------------------
+Action : eat, Object : broccoli image_name : broccoli_002796.jpg
+Processing image: Action: eat, Object: broccoli, Image path: /root/AGD20K/Seen/testset/egocentric/eat/broccoli/broccoli_002796.jpg, GT path: /root/AGD20K/Seen/testset/GT/eat/broccoli/broccoli_002796.png, Image exists: True, GT exists: True
+final points :[[250, 100], [180, 170], [220, 240]]
+parsed dots!!! : [[250, 100], [180, 170], [220, 240]]
+
+==================================================
+Metrics for only_ego broccoli_002796.jpg:
+ only_ego Current - KLD: 0.5124 | SIM: 0.7126 | NSS: 1.4450
+
+Cumulative only_ego  Averages over 116 samples:
+Average - KLD: 1.9321 | SIM: 0.4167 | NSS: 1.2201
+==================================================
+
+*** End   ******************************************************************************************************************************************************
+
+
+
+--- Start  119  / 123 --------------------------------------------------------------------------------
+Action : eat, Object : apple image_name : apple_001541.jpg
+Processing image: Action: eat, Object: apple, Image path: /root/AGD20K/Seen/testset/egocentric/eat/apple/apple_001541.jpg, GT path: /root/AGD20K/Seen/testset/GT/eat/apple/apple_001541.png, Image exists: True, GT exists: True
+final points :[[280, 150], [160, 300], [390, 350]]
+parsed dots!!! : [[280, 150], [160, 300], [390, 350]]
+
+==================================================
+Metrics for only_ego apple_001541.jpg:
+ only_ego Current - KLD: 0.5750 | SIM: 0.5938 | NSS: 0.9839
+
+Cumulative only_ego  Averages over 117 samples:
+Average - KLD: 1.9205 | SIM: 0.4182 | NSS: 1.2181
+==================================================
+
+*** End   ******************************************************************************************************************************************************
+
+
+
+--- Start  120  / 123 --------------------------------------------------------------------------------
+Action : swing, Object : baseball_bat image_name : baseball_bat_001882.jpg
+Processing image: Action: swing, Object: baseball_bat, Image path: /root/AGD20K/Seen/testset/egocentric/swing/baseball_bat/baseball_bat_001882.jpg, GT path: /root/AGD20K/Seen/testset/GT/swing/baseball_bat/baseball_bat_001882.png, Image exists: True, GT exists: True
+final points :[[100, 1150], [150, 950], [200, 750]]
+parsed dots!!! : [[100, 1150], [150, 950], [200, 750]]
+
+==================================================
+Metrics for only_ego baseball_bat_001882.jpg:
+ only_ego Current - KLD: 0.8775 | SIM: 0.4620 | NSS: 2.0276
+
+Cumulative only_ego  Averages over 118 samples:
+Average - KLD: 1.9117 | SIM: 0.4186 | NSS: 1.2250
+==================================================
+
+*** End   ******************************************************************************************************************************************************
+
+
+
+--- Start  121  / 123 --------------------------------------------------------------------------------
+Action : swing, Object : tennis_racket image_name : tennis_racket_003066.jpg
+Processing image: Action: swing, Object: tennis_racket, Image path: /root/AGD20K/Seen/testset/egocentric/swing/tennis_racket/tennis_racket_003066.jpg, GT path: /root/AGD20K/Seen/testset/GT/swing/tennis_racket/tennis_racket_003066.png, Image exists: True, GT exists: True
+final points :[[150, 700], [140, 600], [150, 400]]
+parsed dots!!! : [[150, 700], [140, 600], [150, 400]]
+
+==================================================
+Metrics for only_ego tennis_racket_003066.jpg:
+ only_ego Current - KLD: 2.7026 | SIM: 0.2217 | NSS: 0.6869
+
+Cumulative only_ego  Averages over 119 samples:
+Average - KLD: 1.9183 | SIM: 0.4169 | NSS: 1.2205
+==================================================
+
+*** End   ******************************************************************************************************************************************************
+
+
+
+--- Start  122  / 123 --------------------------------------------------------------------------------
+Action : swing, Object : golf_clubs image_name : golf_clubs_001992.jpg
+Processing image: Action: swing, Object: golf_clubs, Image path: /root/AGD20K/Seen/testset/egocentric/swing/golf_clubs/golf_clubs_001992.jpg, GT path: /root/AGD20K/Seen/testset/GT/swing/golf_clubs/golf_clubs_001992.png, Image exists: True, GT exists: True
+final points :[[180, 400], [180, 900], [180, 1400], [180, 400], [180, 900], [180, 1400]]
+parsed dots!!! : [[180, 400], [180, 900], [180, 1400], [180, 400], [180, 900], [180, 1400]]
+
+==================================================
+Metrics for only_ego golf_clubs_001992.jpg:
+ only_ego Current - KLD: 2.0633 | SIM: 0.2382 | NSS: 1.0797
+
+Cumulative only_ego  Averages over 120 samples:
+Average - KLD: 1.9195 | SIM: 0.4154 | NSS: 1.2193
+==================================================
+
+*** End   ******************************************************************************************************************************************************
+
+
+
+--- Start  123  / 123 --------------------------------------------------------------------------------
+Action : swing, Object : badminton_racket image_name : badminton_racket_003649.jpg
+Processing image: Action: swing, Object: badminton_racket, Image path: /root/AGD20K/Seen/testset/egocentric/swing/badminton_racket/badminton_racket_003649.jpg, GT path: /root/AGD20K/Seen/testset/GT/swing/badminton_racket/badminton_racket_003649.png, Image exists: True, GT exists: True
+final points :[[490, 960], [210, 1280], [570, 840]]
+parsed dots!!! : [[490, 960], [210, 1280], [570, 840]]
+
+==================================================
+Metrics for only_ego badminton_racket_003649.jpg:
+ only_ego Current - KLD: 0.9553 | SIM: 0.4262 | NSS: 2.2162
+
+Cumulative only_ego  Averages over 121 samples:
+Average - KLD: 1.9115 | SIM: 0.4155 | NSS: 1.2275
+==================================================
+
+*** End   ******************************************************************************************************************************************************
+
+
+
+==================================================
+Total number of action-object pairs processed: 123
+Number of missing GT files: 2
+All images successfully processed!
