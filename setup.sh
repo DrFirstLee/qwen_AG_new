@@ -13,11 +13,13 @@ ANACONDA_SH=Anaconda3-2024.02-1-Linux-x86_64.sh
 wget https://repo.anaconda.com/archive/$ANACONDA_SH
 bash $ANACONDA_SH -b -p $HOME/anaconda3
 
-conda init
-
 # PATH 설정
 echo 'export PATH="$HOME/anaconda3/bin:$PATH"' >> ~/.bashrc
 source ~/.bashrc
+
+conda init
+
+
 
 # Conda 버전 확인
 conda --version
@@ -40,3 +42,7 @@ conda env create -f qwen25.yaml -n qwen25
 # 생성된 환경 활성화 안내
 echo ">>> qwen25 환경 생성 완료. 다음 명령으로 활성화하세요:"
 echo "conda activate qwen25"
+
+정리해보면
+소라 : 잘만들어준다 그런데 일관성이 없다.
+veo : 다 좋은데 비싸구나,,

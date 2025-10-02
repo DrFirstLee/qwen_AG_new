@@ -9,6 +9,7 @@ from PIL import Image, ImageDraw, ImageFont, ImageFilter
 from transformers import AutoModelForVision2Seq, AutoProcessor
 from transformers.utils import logging
 logging.set_verbosity_error()
+import timm
 from qwen_vl_utils import process_vision_info
 import torch
 import re
@@ -22,6 +23,7 @@ import numpy as np
 from torchvision.transforms import GaussianBlur
 from torchvision import transforms
 import torch.nn.functional as F
+import torchvision.transforms as T
 import cv2
 
 
@@ -88,6 +90,19 @@ class QwenVLModel:
             ).to(self.device)
             
         print("✅ 모델 로딩 완료!")
+
+        print("LOAD DINO=========")
+        print(timm.models.list_models(pretrained=True))
+        self.dino_model = timm.create_model('vit_base_patch16_224_dino', pretrained=True)
+        self.dino_model.eval()
+        print("✅ DINO 모델 로딩 완료!")
+        
+        # DINO용 이미지 변환기 정의
+        self.dino_transform = T.Compose([
+            T.Resize((224, 224)),
+            T.ToTensor(),
+            T.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])
+        ])
 
     def create_heatmap_from_dots_v2(self, image_size, dots):
         """
@@ -608,6 +623,158 @@ class QwenVLModel:
             'metrics': metrics
         }
 
+    def process_image_ego_with_dino(self, image_path, prompt, gt_path, action):
+        """
+        Process an image with the given prompt
+        Args:
+            image_path (str): Path to the image
+            prompt (str): Prompt for the model
+            gt_path (str): Path to the ground truth image
+        Returns:
+            dict: Model's response and processed information
+        """
+        messages = [
+            {
+                "role": "user",
+                "content": [
+                    {"type": "image", "image": image_path},
+                    {"type": "text", "text": prompt}
+                ]
+            }
+        ]
+                
+        # 채팅 템플릿 적용
+        text = self.processor.apply_chat_template(messages, tokenize=False, add_generation_prompt=True)
+        
+        # vision 정보 처리
+        image_inputs, video_inputs = process_vision_info(messages)
+        
+        # 입력 처리
+        inputs = self.processor(
+            text=[text],
+            images=image_inputs,
+            videos=video_inputs,
+            padding=True,
+            return_tensors="pt",
+        )
+        inputs = inputs.to(self.device)
+        
+        # 추론
+        with torch.no_grad():
+            output = self.model.generate(
+                **inputs, 
+                max_new_tokens=1024, 
+                do_sample=False,
+                temperature=0.0 
+            )
+        
+        # 결과 디코딩
+        generated_ids_trimmed = [
+            out_ids[len(in_ids):] for in_ids, out_ids in zip(inputs.input_ids, output)
+        ]
+        
+        result = self.processor.batch_decode(
+            generated_ids_trimmed, 
+            skip_special_tokens=True, 
+            clean_up_tokenization_spaces=False
+        )[0]
+        
+        print(f"qwen ego Results!! : {result}")
+        # dot 좌표 파싱
+        dots = self.parse_dot_coordinates(result)
+        print(f"parsed dots!!! : {dots}")
+        
+        # Draw dots on the image and get metrics
+        dot_image_path, heatmap_tensor = self.draw_dots_on_image(image_path, dots, gt_path, action)
+        
+        # Save heatmap image
+        script_dir = os.path.dirname(os.path.abspath(__file__))
+        res_dir = os.path.join(script_dir, f'dot_images', 'heatmaps')
+        os.makedirs(res_dir, exist_ok=True)
+        
+        base_name = os.path.splitext(os.path.basename(image_path))[0]
+        ext = os.path.splitext(image_path)[1]
+        heatmap_filename = f"{base_name}_{action}_heatmap{ext}"
+        heatmap_path = os.path.join(res_dir, heatmap_filename)
+        
+        # Convert heatmap tensor to image and save
+        heatmap_img = transforms.ToPILImage()(heatmap_tensor.unsqueeze(0).repeat(3, 1, 1))
+        heatmap_img.save(heatmap_path)
+
+        # print("Generating DINO heatmap...")
+        # DINO DINO
+        original_image = Image.open(image_path).convert('RGB')
+        # 이미지 전처리
+        transform = T.Compose([
+            T.Resize((224, 224)),
+            T.ToTensor(),
+            T.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])
+        ])
+        img_tensor = transform(original_image).unsqueeze(0)
+
+        # DINO 모델로부터 특징 및 어텐션 추출
+        with torch.no_grad():
+            outputs = self.dino_model.forward_features(img_tensor)
+            patch_tokens = outputs[:, 1:, :]
+            
+            # 패치 토큰의 norm을 사용하여 어텐션 맵 계산
+            attn_map = torch.norm(patch_tokens, dim=-1).reshape(14, 14)
+            
+            # 0~1 범위로 정규화
+            attn_map = (attn_map - attn_map.min()) / (attn_map.max() - attn_map.min())
+            
+            # 원본 이미지 크기로 리사이즈
+            dino_heatmap = np.array(Image.fromarray(attn_map.numpy()).resize(original_image.size, resample=Image.Resampling.BILINEAR))
+    
+        dino_power = 2
+        heatmap_tensor = heatmap_tensor + heatmap_tensor.mean()*0.1
+        weighted_dino_heatmap = dino_heatmap ** dino_power
+
+        # 가중치가 적용된 DINO 맵과 VLM 맵을 곱합니다.
+        fused_heatmap = heatmap_tensor * weighted_dino_heatmap
+        
+        if fused_heatmap.max() > 0:
+            fused_heatmap = (fused_heatmap - fused_heatmap.min()) / (fused_heatmap.max() - fused_heatmap.min())
+            
+        # 곱셈 결과, 전체 값이 작아지므로 다시 0~1 범위로 정규화하여 시각화 효과를 높입니다.
+        if fused_heatmap.max() > 0:
+            fused_heatmap = (fused_heatmap - fused_heatmap.min()) / (fused_heatmap.max() - fused_heatmap.min())
+
+
+        # Save dot image separately for validation
+        dot_res_dir = os.path.join(script_dir, f'dot_images', 'dots_only')
+        os.makedirs(dot_res_dir, exist_ok=True)
+        dot_only_filename = f"{base_name}_{action}_dots{ext}"
+        dot_only_path = os.path.join(dot_res_dir, dot_only_filename)
+        
+        # Create dot image (ego image with dots)
+        ego_img = Image.open(image_path)
+        dot_only_img = self.draw_dots_on_single_image(ego_img, dots, color='red', radius=15)
+        dot_only_img.save(dot_only_path)
+        
+        # Calculate metrics if GT is available
+        metrics = None
+        gt_map = self.load_ground_truth(gt_path)
+        if gt_map is not None and len(dots) > 0:
+            metrics = self.calculate_metrics(fused_heatmap, gt_map)
+
+        fused_heatmap_filename = f"{base_name}_{action}_fused_heatmap{ext}"
+        fused_heatmap_path = os.path.join(res_dir, fused_heatmap_filename)
+        
+        # Convert heatmap tensor to image and save
+        fused_heatmap_img = transforms.ToPILImage()(fused_heatmap.unsqueeze(0).repeat(3, 1, 1))
+        fused_heatmap_img.save(fused_heatmap_path)
+
+        return {
+            'text_result': result.strip(),
+            'dots': dots,
+            'dot_image_path': dot_image_path,
+            'dot_only_image_path': dot_only_path,
+            'heatmap_image_path': heatmap_path,
+            'heatmap_tensor': heatmap_tensor,
+            'metrics': metrics
+        }
+        
     def parse_dot_coordinates(self, text):
         """
         Parse list of dot coordinates from a model-generated text response.

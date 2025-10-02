@@ -1,4 +1,34 @@
 
+def step1(action, object_name):
+    return f"""
+    # MISSION: GENERATOR AGENT
+
+You are the **Generator Agent**. Your task is to analyze the provided images (egocentric) and the task description. Generate a **dense cloud of all plausible keypoints** in the **egocentric image** where the action could occur. Be exhaustive and do not filter or judge the points yet.
+
+---
+
+## INPUTS
+
+* **Egocentric Image:** [Primary image for annotation]
+* **Task:** Perform the action '{action}' on the '{object_name}'.
+
+---
+
+## OUTPUT FORMAT (Strict JSON)
+
+Provide your answer inside a single JSON block with the key "generated_points".
+
+```json
+{{
+  "generated_points": [
+    [x1, y1],
+    [x2, y2],
+    [x3, y3]
+  ]
+}}```
+
+"""
+
 def step1_w_exo(action, object_name):
     return f"""
     # MISSION: GENERATOR AGENT
@@ -20,19 +50,57 @@ You are the **Generator Agent**. Your task is to analyze the provided images (eg
 Provide your answer inside a single JSON block with the key "generated_points".
 
 ```json
-{
-"generated_points": [
+{{
+  "generated_points": [
     [x1, y1],
     [x2, y2],
     [x3, y3]
-]
-}
+  ]
+}}```
 
 
 """
 
 def step2(action, object_name):
     return f"""
+# MISSION: INTERACTION PLANNER AGENT
+
+You are the **Interaction Planner Agent**. Your task is to analyze the user's intended **Task** to determine the optimal **Affordance Topology**. The topology describes the geometric 'shape' of the interaction.
+
+---
+
+## INPUTS
+
+* **Task:** Perform the action '{action}' on the '{object_name}'.
+
+---
+
+## INSTRUCTIONS
+
+1.  **Reasoning:** First, briefly explain your reasoning. What is the physical goal of the action '{action}'? Does it require precise force (`POINT`), interaction along an edge (`LINE/CURVE`), or convenience across an area (`REGION`)?
+2.  **Decision:** Then, choose one of the three topology types.
+
+---
+
+## OUTPUT FORMAT (Strict JSON)
+
+Provide your answer inside a single JSON block with the key "topology_analysis".
+
+```json
+{{
+  "topology_analysis": {{
+    "rationale": "The action 'open refrigerator' prioritizes convenience, allowing the user to pull from anywhere on the handle. Therefore, the interaction space is a functionally equivalent area.",
+    "topology": "REGION"
+  }}
+}}
+
+    """
+
+
+
+
+def step2_w_exo(action, object_name):
+  return f"""
 # MISSION: INTERACTION PLANNER AGENT
 
 You are the **Interaction Planner Agent**. Your task is to analyze the user's intended **Task** and the **exocentric reference image** to determine the optimal **Affordance Topology**. The topology describes the geometric 'shape' of the interaction.
@@ -58,17 +126,17 @@ You are the **Interaction Planner Agent**. Your task is to analyze the user's in
 Provide your answer inside a single JSON block with the key "topology_analysis".
 
 ```json
-{
-  "topology_analysis": {
+{{
+  "topology_analysis": {{
     "rationale": "The action 'open refrigerator' prioritizes convenience, allowing the user to pull from anywhere on the handle. Therefore, the interaction space is a functionally equivalent area.",
     "topology": "REGION"
-  }
-}
+  }}
+}}
 
     """
 
 def step3(action, object_name):
-    return f"""
+  return f"""
 # MISSION: REFINER AGENT
 
 You are the **Refiner Agent**. Your task is to take the dense point cloud from the Generator and the strategic topology decision from the Planner to produce the final, precise set of keypoints.
@@ -78,7 +146,7 @@ You are the **Refiner Agent**. Your task is to take the dense point cloud from t
 ## INPUTS
 
 * **Generated Points:** A list of all plausible keypoints, e.g., `[[x1, y1], [x2, y2], ...]`
-* **Topology Analysis:** The decision from the planner, e.g., `{"topology": "REGION", "rationale": "..."}`
+* **Topology Analysis:** The decision from the planner, e.g., `{{ "topology": "REGION", "rationale": "..." }}`
 
 ---
 
@@ -97,11 +165,11 @@ Apply the topology decision to filter the generated points using the following l
 Provide your final answer inside a single JSON block with the key "final_keypoints". The output should only contain the list of coordinates.
 
 ```json
-{
+{{
   "final_keypoints": [
     [x_final_1, y_final_1],
     [x_final_2, y_final_2]
   ]
-}
-
-    """
+}}
+```
+"""
