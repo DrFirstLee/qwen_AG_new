@@ -727,7 +727,7 @@ class QwenVLModel:
             dino_heatmap = np.array(Image.fromarray(attn_map.numpy()).resize(original_image.size, resample=Image.Resampling.BILINEAR))
     
         dino_power = 2
-        heatmap_tensor = heatmap_tensor + heatmap_tensor.mean()*0.1
+        heatmap_tensor = heatmap_tensor + heatmap_tensor.mean()
         weighted_dino_heatmap = dino_heatmap ** dino_power
 
         # 가중치가 적용된 DINO 맵과 VLM 맵을 곱합니다.

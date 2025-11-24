@@ -46,3 +46,6 @@ echo "conda activate qwen25"
 정리해보면
 소라 : 잘만들어준다 그런데 일관성이 없다.
 veo : 다 좋은데 비싸구나,,
+
+ssh -i /home/bongo/porter_notebook/research/research.pem -p 46062 root@207.180.148.74  "tar -C /root/qwen_AG_new/ -czf - 32B_dino_1_power2_all" | tar -xzvf - -C /home/bongo/porter_notebook/research/qwen_AG/
+
